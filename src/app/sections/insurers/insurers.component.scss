@@ -1,0 +1,19 @@
+section {
+    text-align: center;
+    h5 {
+        color: #0740DB;
+        font-size: 26px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+    .box-insurance {
+        text-align: center;
+        img {
+            transition-duration: .3s;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+

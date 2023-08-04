@@ -1,0 +1,120 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    z-index: 100;
+    .navbar-brand {
+        height: 100%;
+        img {
+            height: 100%;
+            transition-duration: .3s;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+    .navbar-toggler {
+        border: none;
+    }
+    .navbar-collapse {
+        justify-content: flex-end;
+        .navbar-nav {
+            .nav-item {
+                margin-right: 20px;
+                .nav-link {
+                    color: #0740DB;
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-weight: 400;
+                    transition-duration: .3s;
+                }
+                .active {
+                    color: #00E0EE;
+                }
+            }
+        }
+        .btn-contact {
+            width: 100%;
+            max-width: 200px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 30px;
+            border: none;
+            background-color: #0740DB;
+            transition-duration: .3s;
+        }
+    }
+}
+
+.navbar-gradient {
+    background-color: #fff;
+    border-bottom: 5px solid transparent;
+}
+  
+.navbar-gradient::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(90deg, rgba(0, 224, 238, 1) 0%, rgba(173, 38, 251, 1) 50%, rgba(7, 64, 219, 1) 100%);
+    z-index: -1;
+}
+
+
+
+
+
+
+
+@media (max-width: 1400px) {
+
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+
+    .navbar {
+        .container {
+            max-width: 100% !important;
+        }
+        .navbar-brand {
+            .logo {
+                max-width: 160px;
+            }
+        }
+        .navbar-collapse {
+            ul {
+                margin: 0;
+                margin-top: 40px;
+                li {
+                    margin: 0;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 576px) {
+    
+}
+

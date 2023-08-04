@@ -1,0 +1,17 @@
+<section class="container mt-5">
+
+    <img src="assets/icon-insurance.svg" alt="icon-insurance">
+    <h5 class="text-center mb-5">Nuestras Aseguradoras</h5>
+
+    <div class="row justify-content-center">
+
+        <div *ngFor="let insurance of insurers" class="col-md-3 d-flex justify-content-center align-items-center mb-5">
+            <div class="box-insurance">
+                <img [src]="insurance.img" [alt]="insurance.name">
+            </div>
+        </div>
+
+    </div>
+
+</section>
+

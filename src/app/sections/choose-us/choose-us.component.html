@@ -1,0 +1,17 @@
+<section class="container mt-5">
+
+    <h3 class="text-center mb-5">¿Por qué elegirnos?</h3>
+
+    <div class="row justify-content-center">
+
+        <div *ngFor="let item of choose" class="col-md-2 mb-5">
+            <div class="box-choose">
+                <img [src]="item.img" [alt]="item.text">
+                <h6>{{ item.text }}</h6>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+

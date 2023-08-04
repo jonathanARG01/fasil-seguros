@@ -1,0 +1,41 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/*========== Efecto ondas en botones ==========*/
+.wave-button {
+    position: relative;
+    border: none;
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    span {
+        position: relative;
+        z-index: 4;
+    }
+}
+  
+.wave-button .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(90deg, rgba(0, 224, 238, 1) 0%, rgba(173, 38, 251, 1) 50%, rgba(7, 64, 219, 1) 100%);
+    opacity: 0;
+    transition: height 0.3s, opacity 0.3s;
+    z-index: 3;
+}
+  
+.wave-button:hover .wave {
+    height: 100%;
+    opacity: 1;
+}
+
+.page {
+    padding: 120px 0;
+    display: block;
+}
