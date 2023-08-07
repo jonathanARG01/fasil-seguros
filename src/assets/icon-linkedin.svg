@@ -1,0 +1,10 @@
+<svg id="Icon_awesome-linkedin-in" data-name="Icon awesome-linkedin-in" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24.438" height="24.438" viewBox="0 0 24.438 24.438">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.045" x2="0.958" y2="0.939" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00e0ee"/>
+      <stop offset="0.478" stop-color="#ad26fb"/>
+      <stop offset="1" stop-color="#0740db"/>
+    </linearGradient>
+  </defs>
+  <path id="Icon_awesome-linkedin-in-2" data-name="Icon awesome-linkedin-in" d="M5.47,24.438H.4V8.122H5.47ZM2.934,5.9A2.948,2.948,0,1,1,5.868,2.935,2.959,2.959,0,0,1,2.934,5.9Zm21.5,18.541H19.377V16.5c0-1.893-.038-4.32-2.634-4.32-2.634,0-3.038,2.056-3.038,4.184v8.079H8.644V8.122H13.5v2.226h.071a5.324,5.324,0,0,1,4.794-2.635c5.128,0,6.07,3.377,6.07,7.762v8.962Z" transform="translate(0 -0.001)" fill="url(#linear-gradient)"/>
+</svg>

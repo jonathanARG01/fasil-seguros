@@ -3,19 +3,16 @@ import { CommonModule } from '@angular/common';
 
 
 
-
 @Component({
-  	selector: 'app-footer',
+  	selector: 'app-discover',
   	standalone: true,
   	imports: [CommonModule],
-  	templateUrl: './footer.component.html',
-  	styleUrls: ['./footer.component.scss']
+  	templateUrl: './discover.component.html',
+  	styleUrls: ['./discover.component.scss']
 })
 
 
 
-export class FooterComponent {
-
-	
+export class DiscoverComponent {
 
 }

@@ -1,8 +1,33 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
+.page {
+    padding-top: 120px;
+    display: block;
+}
 
 /*========== Efecto ondas en botones ==========*/
+.btn-blue-wave {
+    width: 100%;
+    max-width: 300px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    border: none;
+    background-color: #0740DB !important;
+    transition-duration: .3s;
+}
+
 .wave-button {
     position: relative;
     border: none;
@@ -35,7 +60,3 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     opacity: 1;
 }
 
-.page {
-    padding: 120px 0;
-    display: block;
-}

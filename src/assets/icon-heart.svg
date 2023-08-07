@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29.151" height="25.696" viewBox="0 0 29.151 25.696">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.186" x2="0.805" y2="0.881" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00e0ee"/>
+      <stop offset="0.478" stop-color="#ad26fb"/>
+      <stop offset="1" stop-color="#0740db"/>
+    </linearGradient>
+  </defs>
+  <g id="Grupo_359" data-name="Grupo 359" transform="translate(-524.915 -961.75)">
+    <path id="Icon_feather-heart" data-name="Icon feather-heart" d="M22.551,3.747A8.173,8.173,0,0,1,28.33,17.7L16.9,29.134a1.057,1.057,0,0,1-1.495,0L3.967,17.7A8.173,8.173,0,1,1,15.525,6.142l.624.624.624-.624A8.117,8.117,0,0,1,22.551,3.747Zm-6.4,23.144L26.835,16.2a6.059,6.059,0,1,0-8.568-8.568L16.9,9.007a1.057,1.057,0,0,1-1.495,0L14.03,7.636A6.059,6.059,0,0,0,5.462,16.2Z" transform="translate(523.342 958.003)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

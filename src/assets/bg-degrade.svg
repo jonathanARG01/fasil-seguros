@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="936" viewBox="0 0 1920 936">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_190" data-name="Rectángulo 190" width="1920" height="936" transform="translate(0 922)" fill="#fff"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00e0ee"/>
+      <stop offset="1" stop-color="#00e0ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0740db"/>
+      <stop offset="1" stop-color="#1147d7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g id="Enmascarar_grupo_4" data-name="Enmascarar grupo 4" transform="translate(0 -922)" clip-path="url(#clip-path)">
+    <circle id="Elipse_1" data-name="Elipse 1" cx="532.5" cy="532.5" r="532.5" transform="translate(1087 944)" opacity="0.5" fill="url(#radial-gradient)"/>
+    <circle id="Elipse_2" data-name="Elipse 2" cx="593.5" cy="593.5" r="593.5" transform="translate(-618 1342)" opacity="0.5" fill="url(#radial-gradient-2)"/>
+  </g>
+</svg>
