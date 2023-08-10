@@ -1,0 +1,33 @@
+section {
+    position: relative;
+    height: calc(90vh - 100px);
+    max-height: 600px;
+    margin-bottom: 120px;
+    border-radius: 30px;
+    border: 2px solid #AD26FB;
+    overflow: hidden;
+    .grafica {
+        height: 300px;
+        transition-duration: .3s;
+        &:hover {
+            transform: scale(1.1);
+        };
+    }
+    p { 
+        font-size: 60px;
+        font-weight: 400;
+        color: #0740DB;
+        margin: 0;
+        margin-top: 20px;
+    }
+    .ese {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: -120px;
+        transition-duration: .3s;
+        &:hover {
+            transform: scale(1.1) translateX(-40px);
+        };
+    }
+}
