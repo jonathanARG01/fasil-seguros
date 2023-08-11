@@ -26,9 +26,50 @@ section {
         position: absolute;
         top: 0;
         right: -200px;
+        z-index: -1;
         transition-duration: .3s;
         &:hover {
             transform: scale(1.1) translateX(-40px);
         };
     }
 }
+
+
+
+
+
+@media (max-width: 1400px) {
+
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+
+    section {
+        height: auto;
+        margin-top: 40px;
+        h2 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 16px;
+        }
+        .big-ese {
+            display: none;
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 576px) {
+    
+}
+
+

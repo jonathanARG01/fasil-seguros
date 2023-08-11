@@ -61,3 +61,42 @@ section {
         font-size: 12px;
     }
 }
+
+
+
+
+@media (max-width: 1400px) {
+
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+
+    section {
+        .navbar-brand {
+            text-align: center;
+            img {
+                width: 100%;
+                cursor: pointer;
+                transition-duration: 0.3s;
+                max-width: 200px;
+            }
+        }
+        table {
+            margin: 0 auto;
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 576px) {
+    
+}
+

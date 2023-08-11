@@ -52,6 +52,39 @@ section {
     100% {
       transform: scale(1) rotateZ(360deg);
     }
-  }
+}
 
-  
+
+@media (max-width: 1400px) {
+
+}
+
+@media (max-width: 1200px) {
+
+    section {
+        .box-choose {
+            img {
+                max-width: 140px;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 992px) {
+    
+    section {
+        h3 {
+            font-size: 30px;
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 576px) {
+    
+}

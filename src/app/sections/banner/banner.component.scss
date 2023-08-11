@@ -42,3 +42,47 @@ section {
         }
     }
 }
+
+
+
+
+@media (max-width: 1400px) {
+
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+
+    section {
+        max-height: 500px;
+        margin-bottom: 240px;
+        .swiper {
+            .swiper-slide {
+                .content {
+                    padding: 20px;
+                    h6 {                
+                        font-size: 20px;
+                    }
+                    p {
+                        font-size: 30px;
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 576px) {
+    
+}
+
+

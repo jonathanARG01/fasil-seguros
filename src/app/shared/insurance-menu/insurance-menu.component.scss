@@ -48,3 +48,44 @@
         }
     }
 }
+
+
+
+
+@media (max-width: 1400px) {
+
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+
+    .box-insurance-menu {
+        border-radius: 30px;
+        h6 {
+            font-size: 14px;
+        }
+        a {
+            width: auto;
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    
+    .box-insurance-menu {
+        height: 270px;
+        bottom: -160px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    
+}
+
+

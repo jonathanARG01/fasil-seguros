@@ -1,0 +1,31 @@
+ul {
+    justify-content: center;
+    border-bottom: none;
+    margin-bottom: 40px;
+    li {    
+        margin: 0 20px;
+        button {
+            width: 200px;
+            height: 30px;
+            color: #000;
+            background-color: #fff !important;
+            border: 1px solid #1147D7;
+            span {
+                text-transform: capitalize;
+                transition-duration: .3s;
+            }
+            &:hover {
+                span {
+                    color: #fff;
+                }
+            }
+        }
+        button.active {
+            border: inherit !important;
+            background: linear-gradient(90deg, rgba(0, 224, 238, 1) 0%, rgba(173, 38, 251, 1) 50%, rgba(7, 64, 219, 1) 100%);
+            span {
+                color: #fff;
+            }
+        }
+    }
+}

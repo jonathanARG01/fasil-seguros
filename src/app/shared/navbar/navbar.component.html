@@ -23,16 +23,232 @@
                     <a class="nav-link" routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
                 </li>
 
-                <li class="nav-item dropdown">
+                <li id="menu-desk" class="nav-item dropdown">
+                    
+                    <a id="expand-menu" class="nav-link" (click)="toggleMenu()">
+                        Productos
+                    </a>
+                    
+                    <div class="menu-flotante" [ngClass]="{'expanded': isMenuExpanded}">
+                        
+                        <ul class="nav nav-pills mb-5" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="btn-blue-wave wave-button active" id="pills-people-tab" data-bs-toggle="pill" data-bs-target="#pills-people" type="button" role="tab" aria-controls="pills-people" aria-selected="true">
+                                    <span>Personas</span>
+                                    <div class="wave"></div>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="btn-blue-wave wave-button" id="pills-factory-tab" data-bs-toggle="pill" data-bs-target="#pills-factory" type="button" role="tab" aria-controls="pills-factory" aria-selected="false">
+                                    <span>Empresa</span>
+                                    <div class="wave"></div>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="pills-tabContent">
+                        
+                            <div class="tab-pane fade show active" id="pills-people" role="tabpanel" aria-labelledby="pills-people-tab" tabindex="0">
+
+                                <div class="row">
+                                    
+                                    <div class="col-md-6 mb-4">
+                                        <h6>
+                                            <img src="assets/icon-car.svg" alt="car">
+                                            Auto
+                                        </h6>
+                                        <ul class="options">
+                                            <li>
+                                                <a href="#">Seguro Automotriz</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Seguro Moto</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">SOAP</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="col-md-6 mb-4">
+                                        <h6>
+                                            <img src="assets/icon-travel.svg" alt="travel">
+                                            Viajes
+                                        </h6>
+                                        <ul class="options">
+                                            <li>
+                                                <a href="#">Seguro Asistencia en viaje</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">RCI (Responsabilidad Civil Internacional)</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="col-md-6 mb-4">
+                                        <h6>
+                                            <img src="assets/icon-heart.svg" alt="heart">
+                                            Salud
+                                        </h6>
+                                        <ul class="options">
+                                            <li>
+                                                <a href="#">Seguro Accidentes Personales</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="col-md-6 mb-4">
+                                        <h6>
+                                            <img src="assets/icon-house.svg" alt="house">
+                                            Hogar
+                                        </h6>
+                                        <ul class="options">
+                                            <li>
+                                                <a href="#">Seguro Incendio hogar</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-factory" role="tabpanel" aria-labelledby="pills-factory-tab" tabindex="0">
+
+                                <div class="row">
+                                    
+                                    <div class="col-md-6 mb-4">
+                                        <h6>
+                                            <img src="assets/icon-factory.svg" alt="factory">
+                                            Empresa
+                                        </h6>
+                                        <ul class="options">
+                                            <li>
+                                                <a href="#">Seguro incendio</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Seguro Pyme</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Seguro Todo Riesgo de Construcción</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Seguro Todo Riesgo Montaje</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Seguro Equipo Contratista</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-md-6 mb-4">
+                                        <h6 class="opacity-0">
+                                            <img src="assets/icon-factory.svg" alt="factory">
+                                            Empresa
+                                        </h6>
+                                        <ul class="options">
+                                            <li>
+                                                <a href="#">Seguro Equipos Electrónicos</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Responsabilidad Civil</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Incendio Comunidad</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Seguro automotriz (flotas)</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        
+                        </div>
+
+                        <div class="line"></div>
+
+                        <a class="all" routerLink="/productos" routerLinkActive="active">
+                            Ver todo
+                        </a>
+
+                    </div>
+
+                </li>
+
+                <li id="menu-res" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Productos
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        
+                        <div class="mb-2">
+                            <h6>
+                                <img src="assets/icon-car.svg" alt="car">
+                                Auto
+                            </h6>
+                            <ul class="options">
+                                <li>
+                                    <a href="#">Seguro Automotriz</a>
+                                </li>
+                                <li>
+                                    <a href="#">Seguro Moto</a>
+                                </li>
+                                <li>
+                                    <a href="#">SOAP</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <h6>
+                                <img src="assets/icon-travel.svg" alt="travel">
+                                Viajes
+                            </h6>
+                            <ul class="options">
+                                <li>
+                                    <a href="#">Seguro Asistencia en viaje</a>
+                                </li>
+                                <li>
+                                    <a href="#">RCI (Responsabilidad Civil Internacional)</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <h6>
+                                <img src="assets/icon-heart.svg" alt="heart">
+                                Salud
+                            </h6>
+                            <ul class="options">
+                                <li>
+                                    <a href="#">Seguro Accidentes Personales</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <h6>
+                                <img src="assets/icon-house.svg" alt="house">
+                                Hogar
+                            </h6>
+                            <ul class="options">
+                                <li>
+                                    <a href="#">Seguro Incendio hogar</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <a class="all" routerLink="/productos" routerLinkActive="active">
+                            Ver todo
+                        </a>
+
                     </ul>
+
                 </li>
 
                 <li class="nav-item">
@@ -41,7 +257,7 @@
 
             </ul>
             
-            <button class="btn-blue-wave wave-button">
+            <button routerLink="/contacto" routerLinkActive="active" class="btn-blue-wave wave-button">
                 <span>Contacto</span>
                 <div class="wave"></div>
             </button>
@@ -52,3 +268,11 @@
     </div>
 
 </nav>
+
+
+
+
+                                    
+    
+
+    

@@ -3,9 +3,6 @@ import { Component        } from '@angular/core';
 import { CommonModule     } from '@angular/common';
 import { RouterModule     } from '@angular/router';
 
-// Angular Material
-import { MatToolbarModule } from '@angular/material/toolbar';
-
 
 
 @Component({
@@ -20,4 +17,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 export class NavbarComponent {
 
+
+    isMenuExpanded: boolean = false;
+
+    toggleMenu() {
+        this.isMenuExpanded = !this.isMenuExpanded;
+    }
+
+    
 }
