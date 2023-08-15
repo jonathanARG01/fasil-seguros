@@ -15,6 +15,8 @@ import { CommonModule } from '@angular/common';
 
 export class InsurersComponent {
 
+	
+	title: string = 'Nuestras Aseguradoras';
 
 	insurers: any = [
 		{

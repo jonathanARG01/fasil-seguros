@@ -30,9 +30,6 @@ section {
         }
     }
 
-
-
-
     .box-insurance-menu {
         a {
             display: flex;
@@ -66,8 +63,6 @@ section {
         }
     }
 
-
-
     .accordion {
         border: none;
         .accordion-item {
@@ -76,6 +71,7 @@ section {
                 border-bottom: 1px solid #0740DB;
                 button {
                     background-color: transparent;
+                    font-weight: 600;
                 }
             }
             .accordion-collapse {

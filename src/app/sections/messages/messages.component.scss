@@ -11,9 +11,12 @@ section {
         margin-right: 20px;
     }
     p {
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 400;
         color: #0740DB;
+        span {
+            font-weight: 600;
+        }
     }
     .big-ese {
         height: 100%;

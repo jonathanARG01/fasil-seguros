@@ -25,9 +25,7 @@ export class TabsComponent implements OnInit {
 	productos: Producto[] = [];
 
 
-	constructor( private productosServices: ProductosService ) {
-
-	}
+	constructor( private productosServices: ProductosService ) {}
 
 
 	ngOnInit(): void {
@@ -36,18 +34,12 @@ export class TabsComponent implements OnInit {
 
 
 	getProducts(): void {
-		
 		this.productos = this.productosServices.getProducts();
-
-		console.log( 'PRODUCTOS: ' ,this.productos );
-
 	}
 
 
 	getCategories(): void {
-		
 		this.categories = this.productosServices.getCategories();
-
 	}
 
 

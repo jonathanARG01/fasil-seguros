@@ -15,10 +15,12 @@
         font-size: 14px;
     }
     input,
-    select {
+    select,
+    textarea {
         border: 1px solid #000;
         border-radius: 0;
         font-size: 14px;
+        max-height: 160px;
     }
     .text-error {
         display: none;

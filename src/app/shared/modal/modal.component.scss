@@ -1,3 +1,25 @@
+.modal-dialog {
+    overflow: hidden;
+}
+
+.close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 40px;
+    height: 40px;
+    z-index: 15;
+    border: none;
+    border-radius: 100%;
+    background-color: #1147D7;
+    transition-duration: .3s;
+}
+
+.ese {
+    max-width: 100%;
+    margin-left: -100px;
+}
+
 ul {
     justify-content: center;
     border-bottom: none;
@@ -30,6 +52,8 @@ ul {
     }
 }
 
+
+
 @media (max-width: 1400px) {}
 @media (max-width: 1200px) {}
 
@@ -43,3 +67,4 @@ ul {
 
 @media (max-width: 768px) {}
 @media (max-width: 576px) {}
+

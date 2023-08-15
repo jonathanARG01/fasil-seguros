@@ -15,7 +15,7 @@ export class DefaultImagePipe implements PipeTransform {
 		
 		// Si la imagen original no existe (es undefined o null), devuelve la imagen por defecto
 
-		const defaultImageUrl = 'assets/default-image.jpg';
+		const defaultImageUrl = 'assets/default-image.png';
 		return imageUrl || defaultImageUrl;
 	}
 

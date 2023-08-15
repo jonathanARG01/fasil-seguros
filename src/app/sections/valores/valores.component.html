@@ -10,7 +10,7 @@
     
             <div class="col-md-6 mb-5 d-flex flex-column justify-content-center">
                 <h4>Somos</h4>
-                <p>Un equipo multidisciplinario con más de <span>20 años de experiencia</span> en el mercado asegurador, servicios y tecnología. Nuestro objetivo es asesorar a nuestros clientes entregándoles innovadores productos que resuelvan “fasilmente” sus problemáticas, centrarse  en sus necesidades, preocupaciones y oportunidades que presenten siempre comprometidos en buscar la mejora de nuestros servicios para nuestros clientes.</p>
+                <p>Un equipo multidisciplinario con más de <span>20 años de experiencia</span> en el mercado asegurador, servicios y tecnología. Nuestro objetivo es asesorar a nuestros clientes entregándoles innovadores productos que resuelvan <span>“fasilmente”</span> sus problemáticas, centrarse  en sus necesidades, preocupaciones y oportunidades que presenten siempre comprometidos en buscar la mejora de nuestros servicios para nuestros clientes.</p>
             </div>
 
             <div class="col-md-6 mb-5 d-flex flex-column justify-content-center">
@@ -28,29 +28,17 @@
 
         </div>
 
-        <div class="row">
+        <div class="row mt-5">
 
-            <div class="col-md-6 p-5 mb-5">
+            <div class="col-md-6 mb-5">
                 <img class="grafica img-fluid" src="assets/grafica4.svg" alt="grafica">
             </div>
     
-            <div class="col-md-6 mb-5 d-flex flex-column justify-content-center">
+            <div class="col-md-6 mb-5 d-flex flex-column">
                 <h4>Nuestros valores</h4>
                 <ul>
-                    <li>
-                        <span>Profesionalismo:</span> Actuar con integridad, ética y conocimientos especializados para ofrecer el mejor servicio a personas como tu.
-                    </li>
-                    <li>
-                        <span>Orientación al cliente:</span> Colocar siempre las necesidades y los intereses de nuestros clientes en el centro de nuestras acciones y decisiones.
-                    </li>
-                    <li>
-                        <span>Innovación:</span> Buscar constantemente nuevas soluciones que ayuden a mejorar la experiencia de nuestros clientes, como así tecnologías que puedan usarse para cuidar el patrimonio asegurado.
-                    </li>
-                    <li>
-                        <span>Trabajo en equipo:</span> Fomentar un ambiente colaborativo, donde el talento individual se combine con el trabajo conjunto, y así mejorar la experiencia del cliente.
-                    </li>
-                    <li>
-                        <span>Responsabilidad socio y medioambiental:</span> Contribuir activamente al bienestar de la comunidad y el cuidado del medio ambiente, en todas nuestras acciones y decisiones.
+                    <li *ngFor="let valor of valores">
+                        <span>{{ valor.name }}:</span> {{ valor.text }}
                     </li>
                 </ul>
             </div>

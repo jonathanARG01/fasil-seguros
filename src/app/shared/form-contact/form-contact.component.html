@@ -2,7 +2,7 @@
 
     <h6>¿Buscando Tranquilidad y Seguridad?</h6>
     <p>Completa nuestro formulario de contacto y encuentra el seguro ideal</p>
-    
+
     <form>
         
         <div class="row">
@@ -37,7 +37,7 @@
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3" *ngIf="isCar">
                 <label for="marcaInput" class="form-label">Marca</label>
                 <select class="form-select">
                     <option selected>Selecciona una marca</option>
@@ -47,34 +47,50 @@
                 </select>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3" *ngIf="isGeneral">
+                <label for="marcaInput" class="form-label">Motivo de tu consulta *</label>
+                <select class="form-select">
+                    <option selected>Selecciona un motivo...</option>
+                    <option value="1">Cotización seguro</option>
+                    <option value="2">Siniestro</option>
+                    <option value="3">Pagos</option>
+                    <option value="4">Cambios en póliza</option>
+                </select>
+            </div>
+
+            <div class="col-md-6 mb-3" *ngIf="isCar">
                 <label for="modelInput" class="form-label">Modelo</label>
                 <input type="text" class="form-control" id="modelInput">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3" *ngIf="isCar">
                 <label for="yearInput" class="form-label">Año</label>
                 <input type="text" class="form-control" id="yearInput">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3" *ngIf="isCar">
                 <label for="patenteInput" class="form-label">Patente *</label>
                 <input type="text" class="form-control" id="patenteInput">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3" *ngIf="isCar">
                 <label for="cuotaInput" class="form-label">Valor cuota actual</label>
                 <input type="text" class="form-control" id="cuotaInput">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3" *ngIf="isCar">
                 <label for="deducibleInput" class="form-label">Deducible</label>
                 <input type="text" class="form-control" id="deducibleInput">
                 <div class="text-error">Campo obligatorio</div>
+            </div>
+
+            <div class="mb-3" *ngIf="isGeneral">
+                <label for="inputComments" class="form-label">Comentarios o Preguntas</label>
+                <textarea class="form-control" id="inputComments" rows="3"></textarea>
             </div>
 
         </div>

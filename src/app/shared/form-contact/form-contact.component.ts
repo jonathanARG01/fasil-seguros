@@ -1,5 +1,5 @@
-import { Component    } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { CommonModule     } from '@angular/common';
 
 
 
@@ -16,5 +16,7 @@ import { CommonModule } from '@angular/common';
 export class FormContactComponent {
 
 	
+	@Input() isCar!: boolean;
+	@Input() isGeneral!: boolean;
 
 }

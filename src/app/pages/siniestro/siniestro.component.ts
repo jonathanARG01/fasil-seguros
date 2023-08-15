@@ -28,5 +28,29 @@ import { FooterComponent } from 'src/app/shared/footer/footer.component';
 export class SiniestroComponent {
 
 
+	aseguradoras: any = [
+		{
+			name: 'bci seguros',
+			logo: 'assets/logo-bci.svg'
+		},
+		{
+			name: 'hdi seguros',
+			logo: 'assets/logo-hdi.svg'
+		},
+		{
+			name: 'liberty seguros',
+			logo: 'assets/logo-liberty.svg'
+		},
+		{
+			name: 'reale seguros',
+			logo: 'assets/logo-reale.svg'
+		}
+	];
+
+
+	verAseguradora( name: string ) {
+		console.log( 'Aseguradora: ', name );
+	}
+
 
 }

@@ -1,0 +1,51 @@
+<div class="modal fade" id="modalCotizar" tabindex="-1" aria-labelledby="modalCotizarLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <img src="assets/icon-close.svg" alt="close">
+            </button>
+
+            <div class="modal-body">
+                
+                <div class="row">
+                    
+                    <div class="col-md-6 d-none d-md-block">
+                        <img class="ese" src="assets/ese.svg" alt="ese">
+                    </div>
+
+                    <div class="col-md-6">
+                        
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="btn-blue-wave wave-button active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+                                    <span>VEHÍCULO</span>
+                                    <div class="wave"></div>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="btn-blue-wave wave-button" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                                    <span>GENERAL</span>
+                                    <div class="wave"></div>
+                                </button>
+                            </li>
+                        </ul>
+        
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                <form-contact [isCar]="isCar" />
+                            </div>
+                            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                <form-contact [isGeneral]="isGeneral" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

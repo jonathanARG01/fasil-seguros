@@ -25,7 +25,7 @@ section {
                 flex-direction: column;
                 justify-content: center;
                 align-items: start;
-                padding: 40px;
+                padding: 40px 100px;
                 h6 {                
                     font-size: 24px;
                     font-weight: 300;
@@ -37,9 +37,20 @@ section {
                     font-size: 40px;
                     color: #fff;
                     filter: drop-shadow(2px 4px 6px black);
+                    font-weight: 500;
                 }
             }
         }
+    }
+    .swiper-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background-color: #0740DB;
+    }
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+        content: '';
     }
 }
 

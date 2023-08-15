@@ -15,6 +15,6 @@ import { CommonModule } from '@angular/common';
 
 export class MessagesComponent {
 
-	
+	title: string = 'En Fasil Seguros trabajamos con las mejores aseguradoras del país';
 
 }

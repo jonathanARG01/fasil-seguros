@@ -20,12 +20,12 @@
                 <table>
                     <tbody>
                         <tr>
-                            <th>Atención al cliente:</th>
+                            <th>Atención al cliente</th>
                             <td></td>
                         </tr>
                         <tr>
                             <th>Lunes a viernes:</th>
-                            <td>00:00 a 00:00hs</td>
+                            <td> {{ horario }} </td>
                         </tr>
                     </tbody>
                 </table>
@@ -34,19 +34,9 @@
             <div class="col-md-4 mb-5 mb-md-0">
                 <h6 class="justify-content-center">Síguenos</h6>
                 <ul>
-                    <li>
-                        <a href="#">
-                            <img src="assets/icon-facebook.svg" alt="facebook">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="assets/icon-instagram.svg" alt="instagram">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="assets/icon-linkedin.svg" alt="linkedin">
+                    <li *ngFor="let red of rrss">
+                        <a [href]="red.link" target="blank">
+                            <img [src]="red.icon" [alt]="red.name">
                         </a>
                     </li>
                 </ul>
@@ -61,11 +51,11 @@
                     <tbody>
                         <tr>
                             <th>Número:</th>
-                            <td>(+56) 987654321</td>
+                            <td> {{ phone }} </td>
                         </tr>
                         <tr>
                             <th>Mail:</th>
-                            <td>nombre@fasilseguros.cl</td>
+                            <td> {{ email }} </td>
                         </tr>
                     </tbody>
                 </table>
@@ -74,7 +64,7 @@
         </div>
 
         <div class="pt-3 mt-5 bt">
-            <p class="m-0 text-center reserved">Fasil seguros © 2023 Todos los derechos reservados</p>
+            <p class="m-0 text-center reserved"><b>Fasil seguros © 2023</b> Todos los derechos reservados</p>
         </div>
 
     </div>    
