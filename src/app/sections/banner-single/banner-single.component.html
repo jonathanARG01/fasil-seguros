@@ -1,8 +1,14 @@
 <section class="container">
 
-    <img class="img-banner" src="assets/banner-productos.png" alt="banner">
+    <img class="img-banner" [src]="product?.banner | defaultImage" alt="banner">
+    
     <div class="content">
-        <p>Contrata Fasil <br> con “S” de Simple</p>
+        <h6>SEGUROS</h6>
+        <p> {{ product?.name }} </p>
+        <button class="btn-blue-wave wave-button">
+            <span>COTIZA AHORA</span>
+            <div class="wave"></div>
+        </button>
     </div>
 
 </section>

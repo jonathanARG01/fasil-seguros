@@ -1,0 +1,19 @@
+<ng-template #loading>
+    <div class="loading">
+        <div class="spinner-grow text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</ng-template>
+
+
+<div *ngIf="product; else loading" [@pageTransition] class="page page-transition">
+
+    <banner-single [product]="product"/>
+    <contenido />
+    <tips />
+    <benefits />
+    <understanding />
+    <app-footer />
+
+</div>

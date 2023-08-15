@@ -1,0 +1,43 @@
+<section class="container">
+
+    <h6> {{ title }} </h6>
+
+    <div class="accordion mt-5" id="acordeonConceptos">
+
+        <div class="accordion" id="acordeonConceptos">
+
+            <div class="accordion-item" *ngFor="let pregunta of preguntas; let i = index;">
+                
+                <h2 class="accordion-header" [id]="'pregunta' + i">
+                    
+                    <button
+                        class="accordion-button"
+                        [ngClass]="{'collapsed': i !== 0}"
+                        type="button"
+                        data-bs-toggle="collapse" 
+                        [attr.data-bs-target]="'#respuesta' + i"
+                        [attr.aria-expanded]="i === 0 ? 'true' : 'false'" 
+                        [attr.aria-controls]="'respuesta' + i">
+                        {{ i + 1 }} - {{ pregunta.pregunta }}
+                    </button>
+
+                </h2>
+
+                <div
+                    [id]="'respuesta' + i"
+                    class="accordion-collapse collapse"
+                    [ngClass]="{'show': i === 0}"
+                    [attr.aria-labelledby]="'pregunta' + i"
+                    [attr.data-bs-parent]="'#acordeonConceptos'">
+                    <div class="accordion-body">
+                        {{ pregunta.respuesta }}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+          
+    </div>
+
+</section>

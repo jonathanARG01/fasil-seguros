@@ -8,20 +8,18 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { SeguroComponent    } from './pages/seguro/seguro.component';
 import { ContactoComponent  } from './pages/contacto/contacto.component';
 import { SiniestroComponent } from './pages/siniestro/siniestro.component';
+import { ProductoComponent  } from './pages/producto/producto.component';
 
 
 
 export const routes: Routes = [
-    {
-        path: '',
-        redirectTo: 'inicio',
-        pathMatch: 'full',
-    },
-    { path: 'inicio',    component: InicioComponent    },
-    { path: 'nosotros',  component: NosotrosComponent  },
-    { path: 'productos', component: ProductosComponent },
-    { path: 'seguro',    component: SeguroComponent    },
-    { path: 'contacto',  component: ContactoComponent  },
-    { path: 'siniestro', component: SiniestroComponent },
-    { path: '**', redirectTo: 'inicio' }
+    { path: '',              component: InicioComponent, pathMatch: 'full',},
+    { path: 'inicio',        component: InicioComponent    },
+    { path: 'nosotros',      component: NosotrosComponent  },
+    { path: 'productos',     component: ProductosComponent },
+    { path: 'productos/:id', component: ProductoComponent  },
+    { path: 'seguro',        component: SeguroComponent    },
+    { path: 'contacto',      component: ContactoComponent  },
+    { path: 'siniestro',     component: SiniestroComponent },
+    { path: '**', redirectTo: '' }
 ];

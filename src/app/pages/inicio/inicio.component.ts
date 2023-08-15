@@ -1,5 +1,6 @@
 import { Component    } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 // Sections
 import { ChooseUsComponent } from 'src/app/sections/choose-us/choose-us.component';
@@ -25,7 +26,15 @@ import { FooterComponent   } from 'src/app/shared/footer/footer.component';
 		
 	],
   	templateUrl: './inicio.component.html',
-  	styleUrls: ['./inicio.component.scss']
+  	styleUrls: ['./inicio.component.scss'],
+	animations: [
+		trigger('pageTransition', [
+			transition(':enter, :leave', [
+				style({ opacity: 0 }),
+				animate('0.8s ease-in-out', style({ opacity: 1 })),
+			]),
+		])
+	]
 })
 
 
