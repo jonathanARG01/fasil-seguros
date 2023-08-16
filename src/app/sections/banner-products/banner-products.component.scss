@@ -35,3 +35,31 @@ section {
         }
     }
 }
+
+@media (max-width: 1400px) {
+
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+
+    section {
+        .content {
+            p {
+                font-size: 30px;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 576px) {
+    
+}
