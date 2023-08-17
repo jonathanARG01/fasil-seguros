@@ -27,7 +27,9 @@
         height: 30px;
     }
     .text-error {
-        display: none;
+        // display: none;
+        font-size: 12px;
+        color: red;
     }
     button {
         margin-left: auto;
