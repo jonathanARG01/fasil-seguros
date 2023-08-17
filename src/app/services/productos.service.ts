@@ -36,7 +36,7 @@ export class ProductosService {
 	private productos: Producto[] = [
 		{
 			id: 1,
-			name: 'Seguro Automotríz',
+			name: 'Seguro Automotriz',
 			description: 'Protege tu inversión sobre daños, robos o accidentes, con un seguro automotriz y cuida tu patrimonio. Cubre daños propios como a terceros.',
 			cover: ['Daños materiales', 'Robos de accesorios', 'Robo, hurto y uso no autorizado', 'Huelga, Terrorismo', 'Actos maliciosos', 'Sismo granizo y otros riesgos de naturaleza', 'Defensa penal', 'Responsabilidad civil', 'Daños a terceros por conductor dependiente', 'Entre otros'],
 			nocover: ['Los daños preexistentes de mi vehículo', 'Siniestros ocasionados por el uso no autorizado del vehículo', 'Usos diferentes al declarado al contratar el seguro', 'Los daños bajo la influencia de cualquier droga', 'Los daños si el conductor ha huido o abandonado el lugar del accidente', 'Siniestros por modificación de piezas o partes del vehículo asegurado.'],
@@ -47,7 +47,7 @@ export class ProductosService {
 		{
 			id: 2,
 			name: 'Seguro Moto',
-			description: '',
+			description: 'Cobertura de daños materiales, robo o uso no autorizado o responsabilidad civil. Dale tranquilidad a tu vida, al tener un seguro de protección para tu inversión “tu regalona”, ”tu amiga” o ”tu compañera de viaje”.',
 			cover: [],
 			nocover: [],
 			type: 'personas',

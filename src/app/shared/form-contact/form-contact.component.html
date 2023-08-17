@@ -1,53 +1,125 @@
 <div class="box-form">
 
-    <h6>¿Buscando Tranquilidad y Seguridad?</h6>
-    <p>Completa nuestro formulario de contacto y encuentra el seguro ideal</p>
+    <div *ngIf="!isCotizar">
+        <h6>¿Buscando Tranquilidad y Seguridad?</h6>
+        <p>Completa nuestro formulario de contacto y encuentra el seguro ideal</p>  
+    </div>
 
-    <form>
+    <div *ngIf="isCotizar">
+        <h6 class="text-start">Tu Seguridad, Nuestra Prioridad.</h6>
+        <p class="text-start">Completa el formulario y obtén asesoramiento profesional en seguros</p>
+    </div>
+
+    <form [formGroup]="myForm" (ngSubmit)="onSave()" autocomplete="off">
         
         <div class="row">
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-2">
                 <label for="nameInput" class="form-label">Nombre *</label>
-                <input type="text" class="form-control" id="nameInput">
+                <input type="text" class="form-control" id="nameInput" formControlName="name">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-2">
                 <label for="lastnameInput" class="form-label">Apellido *</label>
-                <input type="text" class="form-control" id="lastnameInput">
+                <input type="text" class="form-control" id="lastnameInput" formControlName="lastname">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-2">
                 <label for="rutInput" class="form-label">RUT *</label>
-                <input type="text" class="form-control" id="rutInput">
+                <input type="text" class="form-control" id="rutInput" formControlName="rut">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-2">
                 <label for="emailInput" class="form-label">Correo electrónico *</label>
                 <input type="email" class="form-control" id="emailInput">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-2">
                 <label for="phoneInput" class="form-label">Celular *</label>
                 <input type="text" class="form-control" id="phoneInput">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="col-md-6 mb-3" *ngIf="isCar">
+            <div class="col-md-6 mb-2" *ngIf="isCar">
                 <label for="marcaInput" class="form-label">Marca</label>
+
                 <select class="form-select">
                     <option selected>Selecciona una marca</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="chevrolet">Chevrolet</option>
+                    <option value="suzuki">Suzuki</option>
+                    <option value="peugeot">Peugeot</option>
+                    <option value="kia">Kia</option>
+                    <option value="nissan">Nissan</option>
+                    <option value="ford">Ford</option>
+                    <option value="volkswagen">Volkswagen</option>
+                    <option value="mg">MG</option>
+                    <option value="mazda">Mazda</option>
+                    <option value="changan">Changan</option>
+                    <option value="great-wall">Great Wall</option>
+                    <option value="maxus">Maxus</option>
+                    <option value="chery">Chery</option>
+                    <option value="jac">JAC</option>
+                    <option value="haval">Haval</option>
+                    <option value="subaru">Subaru</option>
+                    <option value="citroen">Citroen</option>
+                    <option value="mitsubishi">Mitsubishi</option>
+                    <option value="ram">RAM</option>
+                    <option value="dfsk">DFSK</option>
+                    <option value="foton">Foton</option>
+                    <option value="ssangyong">SsangYong</option>
+                    <option value="renault">Renault</option>
+                    <option value="opel">Opel</option>
+                    <option value="jetour">Jetour</option>
+                    <option value="bmw">BMW</option>
+                    <option value="honda">Honda</option>
+                    <option value="mercedes-benz">Mercedes Benz</option>
+                    <option value="gac-motor">GAC Motor</option>
+                    <option value="brilliance">Brilliance</option>
+                    <option value="geely">Geely</option>
+                    <option value="baic">BAIC</option>
+                    <option value="jmc">JMC</option>
+                    <option value="jeep">Jeep</option>
+                    <option value="audi">Audi</option>
+                    <option value="kyc">KYC</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="exeed">Exeed</option>
+                    <option value="kaiyi">Kaiyi</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="skoda">Skoda</option>
+                    <option value="mahindra">Mahindra</option>
+                    <option value="seat">SEAT</option>
+                    <option value="karry">Karry</option>
+                    <option value="dfm">DFM</option>
+                    <option value="mini">MINI</option>
+                    <option value="ds">DS</option>
+                    <option value="cupra">CUPRA</option>
+                    <option value="zna">ZNA</option>
+                    <option value="fuso">Fuso</option>
+                    <option value="lexus">Lexus</option>
+                    <option value="land-rover">Land Rover</option>
+                    <option value="porsche">Porsche</option>
+                    <option value="byd">BYD</option>
+                    <option value="dong-feng">Dong Feng</option>
+                    <option value="alfa-romeo">Alfa Romeo</option>
+                    <option value="iveco">IVECO</option>
+                    <option value="zxauto">ZXAUTO</option>
+                    <option value="maserati">Maserati</option>
+                    <option value="dodge">Dodge</option>
+                    <option value="jaguar">Jaguar</option>
+                    <option value="ferrari">Ferrari</option>
+                    <option value="chrysler">Chrysler</option>
+                    <option value="bentley">Bentley</option>
+                    <option value="otros">Otros</option>
                 </select>
+                
             </div>
 
-            <div class="col-md-6 mb-3" *ngIf="isGeneral">
+            <div class="col-md-6 mb-2" *ngIf="isGeneral">
                 <label for="marcaInput" class="form-label">Motivo de tu consulta *</label>
                 <select class="form-select">
                     <option selected>Selecciona un motivo...</option>
@@ -58,49 +130,58 @@
                 </select>
             </div>
 
-            <div class="col-md-6 mb-3" *ngIf="isCar">
+            <div class="col-md-6 mb-2" *ngIf="isCar">
                 <label for="modelInput" class="form-label">Modelo</label>
                 <input type="text" class="form-control" id="modelInput">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="col-md-6 mb-3" *ngIf="isCar">
+            <div class="col-md-6 mb-2" *ngIf="isCar">
                 <label for="yearInput" class="form-label">Año</label>
                 <input type="text" class="form-control" id="yearInput">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="col-md-6 mb-3" *ngIf="isCar">
+            <div class="col-md-6 mb-2" *ngIf="isCar">
                 <label for="patenteInput" class="form-label">Patente *</label>
                 <input type="text" class="form-control" id="patenteInput">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="col-md-6 mb-3" *ngIf="isCar">
+            <div class="col-md-6 mb-2" *ngIf="isCar">
                 <label for="cuotaInput" class="form-label">Valor cuota actual</label>
                 <input type="text" class="form-control" id="cuotaInput">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="mb-3" *ngIf="isCar">
+            <div class="mb-2" *ngIf="isCar">
                 <label for="deducibleInput" class="form-label">Deducible</label>
                 <input type="text" class="form-control" id="deducibleInput">
                 <div class="text-error">Campo obligatorio</div>
             </div>
 
-            <div class="mb-3" *ngIf="isGeneral">
+            <div class="mb-2" *ngIf="isGeneral">
                 <label for="inputComments" class="form-label">Comentarios o Preguntas</label>
                 <textarea class="form-control" id="inputComments" rows="3"></textarea>
             </div>
 
         </div>
         
-        <p class="info">
-            <img src="assets/icon-info.svg" alt="info">
-            Estos datos son importantes para buscar las mejores condiciones de tu próximo seguro
-        </p>
+        <div *ngIf="!isCotizar">
+            <p class="info">
+                <img src="assets/icon-info.svg" alt="info">
+                Estos datos son importantes para buscar las mejores condiciones de tu próximo seguro
+            </p>
+        </div>
 
-        <div class="row mt-5">
+        <div *ngIf="isCotizar">
+            <p class="info text-start">
+                <img src="assets/icon-info.svg" alt="info">
+                Estos datos son importantes para buscar las mejores condiciones de tu próximo seguro
+            </p>
+        </div>
+
+        <div class="row mt-4">
             <div class="col-md-6">
                 <p class="text-start">(*) Campos obligatorios</p>
             </div>

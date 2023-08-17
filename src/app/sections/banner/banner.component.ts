@@ -40,6 +40,11 @@ export class BannerComponent implements OnInit {
 			pretitle: 'Fasil Seguros',
 			title: 'Protección fasil, sin complicaciones',
 			img: 'assets/banner3.png'
+		},
+		{
+			pretitle: 'Seguros',
+			title: 'Seguro Automotriz',
+			img: 'assets/banner-single1.png'
 		}
 	];
 

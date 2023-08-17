@@ -19,18 +19,18 @@ export class BenefitsComponent {
 
 	benefits: any = [
 		{
-			name: 'Beneficio 01',
-			text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+			name: 'Duerme tranquilo',
+			text: 'Protege tu inversión de daños y de la delincuencia.',
 			img: 'assets/icon-benefit1.svg'
 		},
 		{
-			name: 'Beneficio 02',
-			text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+			name: 'Asistencias en todo Chile',
+			text: 'Asistencias que te ayudarán siempre.',
 			img: 'assets/icon-benefit2.svg'
 		},
 		{
-			name: 'Beneficio 03',
-			text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+			name: 'Seguridad para tu auto',
+			text: 'Proximos descuentos en GPS por tener el seguro con Fasil Seguros.',
 			img: 'assets/icon-benefit3.svg'
 		},
 	];

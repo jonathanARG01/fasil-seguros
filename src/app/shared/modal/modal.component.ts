@@ -20,6 +20,7 @@ export class ModalComponent {
 
 	isCar: boolean = true;
 	isGeneral: boolean = true;
+	isCotizar: boolean = true;
 	
 
 }

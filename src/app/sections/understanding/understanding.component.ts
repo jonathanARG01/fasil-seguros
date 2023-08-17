@@ -15,7 +15,6 @@ import { CommonModule } from '@angular/common';
 
 export class UnderstandingComponent {
 
-	title: string = 'Te explicamos 8 conceptos importantes para que entiendas del mundo seguros';
 
 	preguntas: any = [
 		{
