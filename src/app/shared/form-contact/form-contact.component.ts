@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule     } from '@angular/common';
-
+import { Component, Input                     } from '@angular/core';
+import { CommonModule                         } from '@angular/common';
+import { HttpClient, HttpHeaders              } from '@angular/common/http';
+import { Router 				              } from '@angular/router';
 import { AbstractControl, ReactiveFormsModule } from '@angular/forms';
-import { FormBuilder ,FormGroup, Validators } from '@angular/forms';
+import { FormBuilder ,FormGroup, Validators   } from '@angular/forms';
 
 import Swal from 'sweetalert2';
 
@@ -35,7 +36,8 @@ export class FormContactComponent {
 		marca:     [ '' ],
 		model:     [ '' ],
 		year:      [ '' ],
-		patente:   [ '', [Validators.required, this.patenteValidator ]],
+		// patente:   [ '', [Validators.required, this.patenteValidator ]],
+		patente:   [ '' ],
 		cuota:     [ '' ],
 		deducible: [ '' ]
 	});
@@ -52,7 +54,10 @@ export class FormContactComponent {
 	});
 
 
-	constructor( private fb: FormBuilder ) {}
+	constructor(
+		private http: HttpClient,
+		private fb: FormBuilder,
+		private router: Router) {}
 
 
 	validatePhoneInput(event: any): void {
@@ -86,7 +91,6 @@ export class FormContactComponent {
 	}
 
 
-	// Definir un validador personalizado para el RUT
 	private rutValidator(control: AbstractControl): { [key: string]: boolean } | null {
 		
 		const value = control.value;
@@ -146,67 +150,110 @@ export class FormContactComponent {
 	}
 	
 
-	private patenteValidator(control: AbstractControl): { [key: string]: boolean } | null {
+	// private patenteValidator(control: AbstractControl): { [key: string]: boolean } | null {
 		
-		const value = control.value;
+	// 	const value = control.value;
 		
-		if (!value) {
-		  	return null; // No mostrar error si el campo está vacío
-		}
+	// 	if (!value) {
+	// 	  	return null; // No mostrar error si el campo está vacío
+	// 	}
 	  
-		// Expresión regular para validar patente chilena (formato: XXXX-XX)
-		const patentePattern = /^[A-Z0-9]{4}-[A-Z0-9]{2}$/;
+	// 	// Expresión regular para validar patente chilena (formato: XXXX-XX)
+	// 	const patentePattern = /^[A-Z0-9]{4}-[A-Z0-9]{2}$/;
 	  
-		if (!patentePattern.test(value)) {
-		  	return { invalidPatente: true }; // Mostrar error si el formato no es válido
-		}
+	// 	if (!patentePattern.test(value)) {
+	// 	  	return { invalidPatente: true }; // Mostrar error si el formato no es válido
+	// 	}
 	  
-		// Si pasa todas las validaciones, retorna null
-		return null;
+	// 	// Si pasa todas las validaciones, retorna null
+	// 	return null;
 	
-	}
+	// }
 	
 
 	onSave(): void {
-		
+
 		if ( this.isCar ) {
-			console.log( 'Form CAR' );
-			if ( this.myFormCar.invalid ) {
-				Swal.fire({
-					icon: 'error',
-					text: 'Por favor, completa todos los campos obligatorios.'
-				});
-				return;
-			}
-			console.log( this.myFormCar.value );
+		  	
+			console.log('Form CAR');
 			
-			Swal.fire({
-				icon: 'success',
-				text: 'Tu información se ha enviado con éxito a nuestros ejecutivos, y te contactaremos lo más pronto posible, para que tu experiencia sea FASIL.'
-			});
+			if ( this.myFormCar.invalid ) return;
 
-			this.myFormCar.reset();
+			console.log('Form CAR - El formulario SI es valido');
+	  
+			// Mostrar la data del formulario
+		  	console.log( this.myFormCar.value );
+	  
+			// Reemplazar con la URL del EndPoint
+		  	const url 	   = 'URL_DEL_ENDPOINT';
+		  	const formData = this.myFormCar.value;
+		  	const headers  = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+			this.http.post(url, formData, { headers }).subscribe( () => {
+				
+				Swal.fire({
+					icon: 'success',
+					text: 'Tu información se ha enviado con éxito a nuestros ejecutivos, y te contactaremos lo más pronto posible, para que tu experiencia sea FASIL.'
+				});
+				
+				this.myFormCar.reset();
+
+				this.router.navigate(['/thanks']);
+
+			}, (error) => {
+				
+					console.error('Error:', error);
+					
+					Swal.fire({
+						icon: 'error',
+						text: 'Hubo un error al enviar la información. Por favor, inténtalo de nuevo.'
+					});
+
+				}
+			
+			);
+
 		}
-
+	  
 		if ( this.isGeneral ) {
-			console.log( 'Form GENERAL' );
-			if ( this.myFormGeneral.invalid ) {
+
+		  	console.log('Form GENERAL');
+		  	
+			if (this.myFormGeneral.invalid) return;
+
+			console.log('Form GENERAL - El formulario SI es valido');
+	  
+		  	console.log(this.myFormGeneral.value);
+	  
+			// Reemplazar con la URL del EndPoint
+			const url 	   = 'URL_DEL_ENDPOINT';
+		  	const formData = this.myFormGeneral.value;
+		  	const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+	  
+		  	this.http.post(url, formData, { headers }).subscribe( () => {
+			  	
+				Swal.fire({
+					icon: 'success',
+					text: 'Tu información se ha enviado con éxito a nuestros ejecutivos, y te contactaremos lo más pronto posible, para que tu experiencia sea FASIL.'
+			  	});
+			  
+				this.myFormGeneral.reset();
+
+				this.router.navigate(['/thanks']);
+			
+			}, (error) => {
+			  	
+				console.error('Error:', error);
+			  
 				Swal.fire({
 					icon: 'error',
-					text: 'Por favor, completa todos los campos obligatorios.'
-				});
-				return;
-			};
-			console.log( this.myFormGeneral.value );
-
-			Swal.fire({
-				icon: 'success',
-				text: 'Tu información se ha enviado con éxito a nuestros ejecutivos, y te contactaremos lo más pronto posible, para que tu experiencia sea FASIL.'
+					text: 'Hubo un error al enviar la información. Por favor, inténtalo de nuevo.'
+			  	});
+			
 			});
 
-			this.myFormGeneral.reset();
 		}
-
+	
 	}
 
 
