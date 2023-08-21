@@ -1,14 +1,21 @@
 section {
+
     margin-bottom: 100px;
+    
     .row {
         margin-bottom: 100px;
     }
+    .row:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
     h6 {
         color: #000;
         font-size: 18px;
         font-weight: 600;
         margin-bottom: 20px;
     }
+
     p {
         color: #000;
         font-size: 14px;
@@ -18,7 +25,37 @@ section {
             font-weight: 600;
         }
     }
+
+    ul {
+        padding: 0;
+        li {
+            color: #000;
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+    }
+
+    ul.list_1 {
+        li {
+            list-style: none;
+            span {
+                color: #0740DB;
+                font-weight: 600;
+            }
+        }
+    }
+
+    ul.list_2 {
+        li {
+            &::marker {
+                color: #0740DB;
+            }
+        }
+    }
+
     .black {
         color: #000 !important;
     }
+    
 }

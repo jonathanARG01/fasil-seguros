@@ -43,6 +43,56 @@ export class ProductosService {
 			type: 'personas',
 			category: 'auto',
 			banner: 'assets/banner-single1.png',
+			content: [
+				{
+					title: '¿Por qué contratar un seguro automotriz?',
+					text: 'El robo de autos de manera violenta mediante “encerronas” y “portonazos” es el principal temor que tienen a los conductores en Chile, y una de las principales razones para contratar un seguro. ¿SABÍAS QUE? Hasta agosto de 2022, hubo un total de 7.908 robos de vehículos, lo que representa un 121% mas que el 2021, según el último informe publicado por Carabineros de Chile. Un robo, un choque o accidente de tránsito, son situaciones que no se planifican. Sin embargo, lo que si podemos planificar es como prepararnos ante esto, al contratar un seguro automotriz. Prevenir problemas financieros que afecten la economía familiar, es la principal razón para tener un seguro de auto.',
+					img: 'assets/img-single1-1.jpg',
+					button: 'Cotiza tu seguro de auto acá'
+				},
+				{
+					title: '¿Qué es un Seguro Automotriz Full Cobertura?',
+					text: 'El Seguro Automotriz full Cobertura es el seguro más completo y al precio más conveniente. Te protege ante cualquier accidente propio o con un tercero, robo, daño o problema que pueda sufrir tu auto y quienes lo conduzcan. Específicamente, las coberturas que te entrega este seguro son:',
+					list_1: [
+						{
+							title: 'Daños Propios:',
+							text: 'Responde por los daños que pueda sufrir el vehículo, sean estos responsabilidad del propio asegurado o de un tercero.'
+						},
+						{
+							title: 'Pérdida Total:',
+							text: 'Responde por robos o daños superiores a lo establecido en el contrato y que amerite indemnización.'
+						},
+						{
+							title: 'Responsabilidad Civil:',
+							text: 'El seguro automotriz se encarga de cubrir los gastos por daños a terceros, ya sean materiales o a personas, provocados por el vehículo asegurado.'
+						}
+					],
+					img: 'assets/img-single1-2.jpg'
+				},
+				{
+					title: 'Asistencias del Seguro de Auto Full Cobertura',
+					list_1: [
+						{
+							title: 'Auto de Reemplazo:',
+							text: 'En caso de siniestro, reemplazamos tu auto mientras se encuentra en el taller.'
+						},
+						{
+							title: 'Grúa de Emergencia:',
+							text: 'Cuando tu auto quede inmovilizado, vamos donde estés y llevamos el auto donde tú nos indiques.'
+						},
+						{
+							title: 'Conductor de Reemplazo:',
+							text: 'Para que no te preocupes de pasar las llaves. Te ofrecemos 5 servicios gratis al año y atención las 24 horas del día.'
+						},
+						{
+							title: 'Revisión Técnica:',
+							text: 'Para tu comodidad, llevamos tu auto a la revisión técnica por ti y lo devolvemos a tu domicilio gratis.'
+						}
+					],
+					img: 'assets/img-single1-3.jpg',
+					button: 'Cotizar'
+				}
+			]
 		},
 		{
 			id: 2,
@@ -53,6 +103,7 @@ export class ProductosService {
 			type: 'personas',
 			category: 'auto',
 			banner: '',
+			content: []
 		},
 		{
 			id: 3,
@@ -62,7 +113,65 @@ export class ProductosService {
 			nocover: [],
 			type: 'personas',
 			category: 'auto',
-			banner: '',
+			banner: 'assets/banner-single3.png',
+			content: [
+				{
+					title: 'Condiciones generales',
+					list_2: [
+						{
+							text: 'El seguro obligatorio de accidentes personales (SOAP) es un seguro de carácter obligatorio establecido por la Ley 18.490, la cual establece que todo vehículo motorizado que circule en territorio nacional y que requiera de un permiso de circulación, deberá estar asegurado contra el riesgo de accidentes personales.'
+						},
+						{
+							text: 'Cubre los riesgos de muerte y lesiones corporales que sufran las personas como consecuencia de un accidente en el cual ha intervenido el vehículo asegurado.'
+						},
+						{
+							text: 'Se contrata anualmente y es requisito previo al pago del permiso de circulación.'
+						},
+						{
+							text: 'El carácter obligatorio de este seguro también tiene su origen en el artículo 45 de la Ley de Tránsito, el cual dispone que los vehículos motorizados no podrán transitar sin la placa única, el permiso de circulación otorgado por las Municipalidades y el certificado de un seguro obligatorio de accidentes causados por vehículos motorizados.'
+						},
+						{
+							text: 'Además de las disposiciones legales, existe una póliza depositada bajo el POL320130487, dicho texto, debido a su carácter legal no tiene cláusulas adicionales ni anexos. '
+						}
+					],
+					img: 'assets/img-single3-1.png'
+				},
+				{
+					title: 'Coberturas:',
+					list_2: [
+						{
+							text: 'Las coberturas del SOAP se encuentran establecidas por la Ley 18.490 cubriendo los riesgos de muerte y lesiones corporales que sufran las personas como consecuencia de accidentes en que intervengan el vehículo asegurado, sus remolques o cargas.'
+						},
+						{
+							text: 'El seguro se extiende tanto al conductor del vehículo asegurado, personas transportadas en el mismo y terceros afectados'
+						}
+					],
+					img: 'assets/img-single3-2.png',
+					button: 'Cotizar'
+				},
+				{
+					title: 'Exclusiones:',
+					text: 'El artículo 34 de la Ley 18.490 establece las escasas exclusiones de cobertura para estos seguros:',
+					list_2: [
+						{
+							text: 'a)Los causados en carreras de automóviles y otras competencias de vehículos motorizados.'
+						},
+						{
+							text: 'b)Los ocurridos fuera del territorio nacional.'
+						},
+						{
+							text: 'c)Los ocurridos como consecuencia de guerras, sismos y otros casos fortuitos enteramente extraños a la circulación del vehículo, y…'
+						},
+						{
+							text: 'd)El suicidio y la comisión de lesiones auto inferidas.'
+						},
+						{
+							text: 'e)Si bien no se indica expresamente en la norma, cualquier tipo de daño material se encuentra excluido de cobertura, al no corresponder con la nominación de los riesgos cubiertos por la póliza. '
+						}
+					],
+					img: 'assets/img-single3-3.png'
+				}
+			]
 		},
 		{
 			id: 4,
@@ -73,6 +182,7 @@ export class ProductosService {
 			type: 'personas',
 			category: 'salud',
 			banner: '',
+			content: []
 		},
 		{
 			id: 5,
@@ -83,6 +193,7 @@ export class ProductosService {
 			type: 'personas',
 			category: 'salud',
 			banner: '',
+			content: []
 		},
 		{
 			id: 6,
@@ -93,6 +204,7 @@ export class ProductosService {
 			type: 'personas',
 			category: 'salud',
 			banner: '',
+			content: []
 		},
 		{
 			id: 7,
@@ -103,6 +215,7 @@ export class ProductosService {
 			type: 'personas',
 			category: 'viajes',
 			banner: '',
+			content: []
 		},
 		{
 			id: 8,
@@ -113,6 +226,7 @@ export class ProductosService {
 			type: 'personas',
 			category: 'viajes',
 			banner: '',
+			content: []
 		},
 		{
 			id: 9,
@@ -123,6 +237,7 @@ export class ProductosService {
 			type: 'personas',
 			category: 'hogar',
 			banner: '',
+			content: []
 		},
 		{
 			id: 10,
@@ -133,6 +248,7 @@ export class ProductosService {
 			type: 'empresas',
 			category: 'empresa',
 			banner: '',
+			content: []
 		},
 		{
 			id: 11,
@@ -143,6 +259,7 @@ export class ProductosService {
 			type: 'empresas',
 			category: 'empresa',
 			banner: '',
+			content: []
 		},
 		{
 			id: 12,
@@ -153,6 +270,7 @@ export class ProductosService {
 			type: 'empresas',
 			category: 'empresa',
 			banner: '',
+			content: []
 		},
 		{
 			id: 13,
@@ -163,6 +281,7 @@ export class ProductosService {
 			type: 'empresas',
 			category: 'empresa',
 			banner: '',
+			content: []
 		},
 		{
 			id: 14,
@@ -173,6 +292,7 @@ export class ProductosService {
 			type: 'empresas',
 			category: 'empresa',
 			banner: '',
+			content: []
 		},
 		{
 			id: 15,
@@ -183,6 +303,7 @@ export class ProductosService {
 			type: 'empresas',
 			category: 'empresa',
 			banner: '',
+			content: []
 		},
 		{
 			id: 16,
@@ -193,6 +314,7 @@ export class ProductosService {
 			type: 'empresas',
 			category: 'empresa',
 			banner: '',
+			content: []
 		},
 		{
 			id: 17,
@@ -203,6 +325,7 @@ export class ProductosService {
 			type: 'empresas',
 			category: 'empresa',
 			banner: '',
+			content: []
 		},
 		{
 			id: 18,
@@ -213,6 +336,7 @@ export class ProductosService {
 			type: 'empresas',
 			category: 'empresa',
 			banner: '',
+			content: []
 		}
 	];
 

@@ -4,9 +4,10 @@ import { CommonModule     } from '@angular/common';
 import { RouterOutlet     } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-
 // Components
 import { NavbarComponent } from './shared/navbar/navbar.component';
+
+
 
 @Component({
   	selector: 'app-root',
@@ -19,9 +20,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 
 
 export class AppComponent {
-
 	title = 'fasil-seguros';
-
 }
 
 

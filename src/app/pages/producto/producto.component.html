@@ -11,8 +11,8 @@
 
     <banner-single [product]="product"/>
     <contenido />
-    <tips />
-    <benefits />
+    <tips *ngIf="product.id === 1" />
+    <benefits *ngIf="product.id === 1" />
     <understanding />
     <app-footer />
 

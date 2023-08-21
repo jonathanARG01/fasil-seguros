@@ -8,4 +8,5 @@ export interface Producto {
     type:            string;
     category:        string;
     banner:          string;
+    content:         any[];
 }

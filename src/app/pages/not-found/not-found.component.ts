@@ -1,16 +1,15 @@
 import { Component    } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 
 
 @Component({
-  	selector: 'app-thanks',
+  	selector: 'not-found',
   	standalone: true,
-  	imports: [CommonModule, RouterModule],
-  	templateUrl: './thanks.component.html',
-  	styleUrls: ['./thanks.component.scss'],
+  	imports: [CommonModule],
+  	templateUrl: './not-found.component.html',
+  	styleUrls: ['./not-found.component.scss'],
 	animations: [
 		trigger('pageTransition', [
 			transition(':enter, :leave', [
@@ -23,8 +22,6 @@ import { animate, style, transition, trigger } from '@angular/animations';
 
 
 
-export class ThanksComponent {
-
-
+export class NotFoundComponent {
 
 }
