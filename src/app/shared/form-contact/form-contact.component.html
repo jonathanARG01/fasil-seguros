@@ -14,52 +14,38 @@
         
         <div class="row">
 
-            <!-- Name (2) -->
+            <!-- Nombre (2) -->
             <div class="col-md-6 mb-2">
                 <label class="form-label">Nombre *</label>
-                <input type="text" class="form-control" name="name" formControlName="name">
-                <span class="text-error" *ngIf="isFieldInvalid(myFormCar, 'name')">Campo obligatorio</span>
-                <span class="text-error" *ngIf="isFieldInvalid(myFormGeneral, 'name')">Campo obligatorio</span>
+                <input type="text" class="form-control" name="nombre" formControlName="nombre">
+                <span class="text-error" *ngIf="isFieldInvalid(myFormCar, 'nombre')">Campo obligatorio</span>
+                <span class="text-error" *ngIf="isFieldInvalid(myFormGeneral, 'nombre')">Campo obligatorio</span>
             </div>
 
-            <!-- Lastname (2) -->
+            <!-- Apellido (2) -->
             <div class="col-md-6 mb-2">
                 <label class="form-label">Apellido *</label>
-                <input type="text" class="form-control" name="lastname" formControlName="lastname">
-                <span class="text-error" *ngIf="isFieldInvalid(myFormCar, 'lastname')">Campo obligatorio</span>
-                <span class="text-error" *ngIf="isFieldInvalid(myFormGeneral, 'lastname')">Campo obligatorio</span>
+                <input type="text" class="form-control" name="apellido" formControlName="apellido">
+                <span class="text-error" *ngIf="isFieldInvalid(myFormCar, 'apellido')">Campo obligatorio</span>
+                <span class="text-error" *ngIf="isFieldInvalid(myFormGeneral, 'apellido')">Campo obligatorio</span>
             </div>
 
             <!-- Rut (2) -->
             <div class="col-md-6 mb-2">
                 <label class="form-label">RUT *</label>
-                <input type="text" class="form-control" name="rut" formControlName="rut" (input)="formatRut($event)">
-                <div *ngIf="myFormCar.get('rut')?.touched">
-                    <span class="text-error" *ngIf="myFormCar.get('rut')?.hasError('required'); else rutError">
-                        Campo obligatorio
-                    </span>
-                    <ng-template #rutError>
-                        <span class="text-error" *ngIf="myFormCar.get('rut')?.hasError('invalidRut')">
-                            RUT inválido
-                        </span>
-                        <span class="text-error" *ngIf="myFormCar.get('rut')?.hasError('invalidLength')">
-                            El RUT debe tener entre 8 y 9 caracteres
-                        </span>
-                    </ng-template>
-                </div>
-                <div *ngIf="myFormGeneral.get('rut')?.touched">
-                    <span class="text-error" *ngIf="myFormGeneral.get('rut')?.hasError('required'); else rutError">
-                        Campo obligatorio
-                    </span>
-                    <ng-template #rutError>
-                        <span class="text-error" *ngIf="myFormGeneral.get('rut')?.hasError('invalidRut')">
-                            RUT inválido
-                        </span>
-                        <span class="text-error" *ngIf="myFormGeneral.get('rut')?.hasError('invalidLength')">
-                            El RUT debe tener entre 8 y 9 caracteres
-                        </span>
-                    </ng-template>
-                </div>
+                <input type="text" class="form-control" name="rut" formControlName="rut" maxlength="9">
+                <span class="text-error" *ngIf="myFormCar.get('rut')?.hasError('invalidRut')">
+                    RUT inválido
+                </span>
+                <span class="text-error" *ngIf="myFormCar.get('rut')?.hasError('invalidLength')">
+                    El RUT debe tener 8 o 9 caracteres
+                </span>
+                <span class="text-error" *ngIf="myFormGeneral.get('rut')?.hasError('invalidRut')">
+                    RUT inválido
+                </span>
+                <span class="text-error" *ngIf="myFormGeneral.get('rut')?.hasError('invalidLength')">
+                    El RUT debe tener 8 o 9 caracteres
+                </span>
             </div>
 
             <!-- Email (2) -->
@@ -84,23 +70,23 @@
                 </div>
             </div>
 
-            <!-- Phone (2) -->
+            <!-- Telefono (2) -->
             <div class="col-md-6 mb-2">
                 <label class="form-label">Celular *</label>
-                <input type="text" class="form-control" name="phone" formControlName="phone" maxlength="9" (input)="validatePhoneInput($event)">
+                <input type="text" class="form-control" name="phone" formControlName="telefono" maxlength="9" (input)="validatePhoneInput($event)">
                 <div *ngIf="myFormCar.get('phone')?.touched">
-                    <span class="text-error" *ngIf="myFormCar.get('phone')?.hasError('required')">
+                    <span class="text-error" *ngIf="myFormCar.get('telefono')?.hasError('required')">
                         Campo obligatorio
                     </span>
-                    <span class="text-error" *ngIf="myFormCar.get('phone')?.hasError('invalidLength')">
+                    <span class="text-error" *ngIf="myFormCar.get('telefono')?.hasError('invalidLength')">
                         El Celular debe tener 9 números
                     </span>
                 </div>
-                <div *ngIf="myFormGeneral.get('phone')?.touched">
-                    <span class="text-error" *ngIf="myFormGeneral.get('phone')?.hasError('required')">
+                <div *ngIf="myFormGeneral.get('telefono')?.touched">
+                    <span class="text-error" *ngIf="myFormGeneral.get('telefono')?.hasError('required')">
                         Campo obligatorio
                     </span>
-                    <span class="text-error" *ngIf="myFormGeneral.get('phone')?.hasError('invalidLength')">
+                    <span class="text-error" *ngIf="myFormGeneral.get('telefono')?.hasError('invalidLength')">
                         El Celular debe tener 9 números
                     </span>
                 </div>
@@ -183,26 +169,26 @@
             <!-- Motivo -->
             <div class="col-md-6 mb-2" *ngIf="isGeneral">
                 <label class="form-label">Motivo de tu consulta *</label>
-                <select class="form-select" name="motivo" formControlName="motivo">
+                <select class="form-select" name="motivo_consulta" formControlName="motivo_consulta">
                     <option selected>Selecciona un motivo...</option>
                     <option value="cotizacion-seguro">Cotización seguro</option>
                     <option value="siniestro">Siniestro</option>
                     <option value="pagos">Pagos</option>
                     <option value="cambios-poliza">Cambios en póliza</option>
                 </select>
-                <span class="text-error" *ngIf="isFieldInvalid(myFormGeneral, 'motivo')">Campo obligatorio</span>
+                <span class="text-error" *ngIf="isFieldInvalid(myFormGeneral, 'motivo_consulta')">Campo obligatorio</span>
             </div>
 
             <!-- Modelo -->
             <div class="col-md-6 mb-2" *ngIf="isCar">
                 <label class="form-label">Modelo</label>
-                <input type="text" class="form-control" name="model" formControlName="model">
+                <input type="text" class="form-control" name="modelo" formControlName="modelo">
             </div>
 
             <!-- Año -->
             <div class="col-md-6 mb-2" *ngIf="isCar">
                 <label class="form-label">Año</label>
-                <input type="text" class="form-control" name="year" formControlName="year">
+                <input type="text" class="form-control" name="anio" formControlName="anio">
             </div>
 
             <!-- Patente -->
@@ -219,7 +205,7 @@
             <!-- Cuota -->
             <div class="col-md-6 mb-2" *ngIf="isCar">
                 <label class="form-label">Valor cuota actual</label>
-                <input type="text" class="form-control" name="cuota" formControlName="cuota">
+                <input type="text" class="form-control" name="valor_cuota" formControlName="valor_cuota">
             </div>
 
             <!-- Deducible -->
@@ -231,7 +217,7 @@
             <!-- Comentarios -->
             <div class="mb-2" *ngIf="isGeneral">
                 <label class="form-label">Comentarios o Preguntas</label>
-                <textarea class="form-control" rows="3" name="comments" formControlName="comments"></textarea>
+                <textarea class="form-control" rows="3" name="comentarios" formControlName="comentarios"></textarea>
             </div>
 
         </div>

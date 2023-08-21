@@ -28,29 +28,49 @@ export class FormContactComponent {
 
 
 	public myFormCar: FormGroup = this.fb.group({
-		name:      [ '', [Validators.required] ],
-		lastname:  [ '', [Validators.required] ],
-		rut:       [ '', [Validators.required, this.rutValidator] ],
-		email:     [ '', [Validators.required, Validators.email] ],
-		phone:     [ '', [Validators.required, Validators.minLength(9), Validators.maxLength(9)] ],
-		marca:     [ '' ],
-		model:     [ '' ],
-		year:      [ '' ],
-		// patente:   [ '', [Validators.required, this.patenteValidator ]],
-		patente:   [ '' ],
-		cuota:     [ '' ],
-		deducible: [ '' ]
+		nombre:      [ '', [Validators.required] ],
+		apellido:    [ '', [Validators.required] ],
+		rut:         [ '', [Validators.required, this.rutValidator]],
+		email:       [ '', [Validators.required, Validators.email] ],
+		telefono:    [ '', [Validators.required] ],
+		marca:       [ '' ],
+		modelo:      [ '' ],
+		anio:        [ '' ],
+		patente:     [ '' ],
+		valor_cuota: [ '' ],
+		deducible:   [ '' ]
 	});
+
+
+	// rut:       [ '', [Validators.required, this.rutValidator]],
+	// telefono: [ '', [Validators.required, Validators.minLength(9), Validators.maxLength(9)] ],
+	// patente:   [ '', [Validators.required, this.patenteValidator ]],
+
+	// {
+	// 	"motivo_consulta": "Test",
+	// 	"nombre": "Juan",
+	// 	"apellido": "Perez",
+	// 	"rut": "11.111.111-1",
+	// 	"email": "test@test.cl",
+	// 	"telefono": "987654321",
+	// 	"marca": "Mazda",
+	// 	"modelo": "2 Sport",
+	// 	"anio": 2018,
+	// 	"patente": "KJBT84",
+	// 	"valor_cuota": 30000,
+	// 	"deducible": "5 UF",
+	// 	"comentarios": "Test"
+	//   }
 
 	
 	public myFormGeneral: FormGroup = this.fb.group({
-		name:      [ '', [Validators.required, Validators.minLength(3)] ],
-		lastname:  [ '', [Validators.required, Validators.minLength(3)] ],
-		rut:       [ '', [Validators.required, this.rutValidator]],
-		email:     [ '', [Validators.required, Validators.email] ],
-		phone:     [ '', [Validators.required, Validators.minLength(9), Validators.maxLength(9)] ],
-		motivo:    [ '', [Validators.required] ],
-		comments:  [ '' ],
+		nombre:          [ '', [Validators.required] ],
+		apellido:        [ '', [Validators.required] ],
+		rut:             [ '', [Validators.required, this.rutValidator]],
+		email:           [ '', [Validators.required, Validators.email] ],
+		telefono:        [ '', [Validators.required] ],
+		motivo_consulta: [ '', [Validators.required] ],
+		comentarios:     [ '' ],
 	});
 
 
@@ -74,49 +94,58 @@ export class FormContactComponent {
 	}
 
 
-	formatRut(event: any): void {
-		
-		const input = event.target as HTMLInputElement;
-		let rutValue = input.value.replace(/\D+/g, ''); // Remover caracteres no numéricos
-		
-		if ( rutValue.length > 1 ) {
-		  	const lastDigit    = rutValue.slice(-1);
-		  	const restOfDigits = rutValue.slice(0, -1);
-		  	rutValue           = restOfDigits + '-' + lastDigit;
-		}
-		
-		input.value = rutValue;
-		this.myFormCar.get('rut')?.setValue(rutValue, { emitEvent: false });
-	
-	}
 
 
 	private rutValidator(control: AbstractControl): { [key: string]: boolean } | null {
-		
 		const value = control.value;
-
+	
 		if (!value) {
 			return null; // No mostrar error si el campo está vacío
 		}
-
+	
 		// Expresión regular para validar RUT chileno (con puntos y guión)
-		const rutPattern = /^[0-9]+-[0-9kK]{1}$/;
-		
+		const rutPattern = /^[0-9]{1,2}\.?[0-9]{3}\.?[0-9]{3}-?[0-9kK]{1}$/;
+	
 		if (!rutPattern.test(value)) {
 			return { invalidRut: true }; // Mostrar error si el formato no es válido
 		}
-
+	
+		// Eliminar puntos y guion para contar la longitud real del RUT
+		const rutWithoutPunctuation = value.replace(/[.-]/g, '');
+	
 		// Verificar longitud mínima y máxima
-		const rutWithoutPunctuation = value.replace(/[.-]/g, ''); // Eliminar puntos y guiones
-		if (rutWithoutPunctuation.length < 8 || rutWithoutPunctuation.length > 9) {
-			return { invalidLength: true }; // Mostrar error si longitud es incorrecta
+		if (rutWithoutPunctuation.length !== 8 && rutWithoutPunctuation.length !== 9) {
+			return { invalidLength: true }; // Mostrar error si la longitud no es correcta
 		}
-
+	
+		// Validar el dígito verificador (algoritmo adecuado para validar RUT)
+		const rutDigits = rutWithoutPunctuation.slice(0, -1);
+		const verifierDigit = rutWithoutPunctuation.slice(-1).toUpperCase();
+		const verifierCode = (verifierDigit === 'K') ? 10 : parseInt(verifierDigit, 10);
+	
+		let sum = 0;
+		let multiplier = 2;
+	
+		for (let i = rutDigits.length - 1; i >= 0; i--) {
+			sum += parseInt(rutDigits[i], 10) * multiplier;
+			multiplier = (multiplier === 7) ? 2 : multiplier + 1;
+		}
+	
+		const calculatedVerifier = 11 - (sum % 11);
+		const calculatedVerifierDigit = (calculatedVerifier === 10) ? 'K' : String(calculatedVerifier);
+	
+		if (calculatedVerifierDigit !== verifierDigit) {
+			return { invalidRut: true }; // Mostrar error si el dígito verificador no coincide
+		}
+	
 		// Si pasa todas las validaciones, retorna null
 		return null;
-
 	}
-
+	
+	
+	
+	
+	
 
 	isFieldInvalid(form: FormGroup, fieldName: string): boolean {
 		const field = form.get(fieldName);
@@ -172,89 +201,60 @@ export class FormContactComponent {
 	
 
 	onSave(): void {
-
-		if ( this.isCar ) {
-		  	
-			console.log('Form CAR');
-			
-			if ( this.myFormCar.invalid ) return;
-
-			console.log('Form CAR - El formulario SI es valido');
+		let formData: any;
 	  
-			// Mostrar la data del formulario
-		  	console.log( this.myFormCar.value );
-	  
-			// Reemplazar con la URL del EndPoint
-		  	const url 	   = 'URL_DEL_ENDPOINT';
-		  	const formData = this.myFormCar.value;
-		  	const headers  = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-			this.http.post(url, formData, { headers }).subscribe( () => {
-				
-				Swal.fire({
-					icon: 'success',
-					text: 'Tu información se ha enviado con éxito a nuestros ejecutivos, y te contactaremos lo más pronto posible, para que tu experiencia sea FASIL.'
-				});
-				
-				this.myFormCar.reset();
-
-				this.router.navigate(['/thanks']);
-
-			}, (error) => {
-				
-					console.error('Error:', error);
-					
-					Swal.fire({
-						icon: 'error',
-						text: 'Hubo un error al enviar la información. Por favor, inténtalo de nuevo.'
-					});
-
-				}
-			
-			);
-
+		if (this.isCar) {
+		  if (this.myFormCar.invalid) return;
+		  formData = this.myFormCar.value;
 		}
 	  
-		if ( this.isGeneral ) {
-
-		  	console.log('Form GENERAL');
-		  	
-			if (this.myFormGeneral.invalid) return;
-
-			console.log('Form GENERAL - El formulario SI es valido');
+		if (this.isGeneral) {
+		  if (this.myFormGeneral.invalid) return;
+		  formData = this.myFormGeneral.value;
+		}
 	  
-		  	console.log(this.myFormGeneral.value);
+		// Formatear el RUT antes de enviarlo
+		if (formData.rut) {
+		  const rutValue = formData.rut.replace(/[^\dkK]/g, '');
+		  const rutDigits = rutValue.slice(0, -1);
+		  const verifierDigit = rutValue.slice(-1);
+		  const formattedRut = `${rutDigits.slice(0, 2)}.${rutDigits.slice(2, 5)}.${rutDigits.slice(5)}-${verifierDigit}`;
+		  formData.rut = formattedRut;
+		}
 	  
-			// Reemplazar con la URL del EndPoint
-			const url 	   = 'URL_DEL_ENDPOINT';
-		  	const formData = this.myFormGeneral.value;
-		  	const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+		const url = 'https://leads.fasilseguros.cl/api/save';
+		const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 	  
-		  	this.http.post(url, formData, { headers }).subscribe( () => {
-			  	
-				Swal.fire({
-					icon: 'success',
-					text: 'Tu información se ha enviado con éxito a nuestros ejecutivos, y te contactaremos lo más pronto posible, para que tu experiencia sea FASIL.'
-			  	});
-			  
-				this.myFormGeneral.reset();
+		console.log( formData );
 
-				this.router.navigate(['/thanks']);
-			
-			}, (error) => {
-			  	
-				console.error('Error:', error);
-			  
-				Swal.fire({
-					icon: 'error',
-					text: 'Hubo un error al enviar la información. Por favor, inténtalo de nuevo.'
-			  	});
-			
+		this.http.post(url, formData, { headers }).subscribe(
+		  () => {
+			Swal.fire({
+			  icon: 'success',
+			  text: 'Tu información se ha enviado con éxito a nuestros ejecutivos, y te contactaremos lo más pronto posible, para que tu experiencia sea FASIL.'
 			});
-
-		}
-	
-	}
+	  
+			if (this.isCar) {
+			  this.myFormCar.reset();
+			}
+	  
+			if (this.isGeneral) {
+			  this.myFormGeneral.reset();
+			}
+	  
+			this.router.navigate(['/thanks']);
+		  },
+		  (error) => {
+			console.error('Error:', error);
+	  
+			Swal.fire({
+			  icon: 'error',
+			  text: 'Hubo un error al enviar la información. Por favor, inténtalo de nuevo.'
+			});
+		  }
+		);
+	  }
+	  
 
 
 }
