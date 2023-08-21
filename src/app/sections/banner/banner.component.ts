@@ -27,6 +27,11 @@ export class BannerComponent implements OnInit {
 
 	slides: any = [
 		{
+			pretitle: 'Seguros',
+			title: 'Seguro Automotriz',
+			img: 'assets/banner-single1.png'
+		},
+		{
 			pretitle: 'Fasil Seguros',
 			title: 'Cubre todo, sin complicaciones',
 			img: 'assets/banner1.png'
@@ -40,11 +45,6 @@ export class BannerComponent implements OnInit {
 			pretitle: 'Fasil Seguros',
 			title: 'Protección fasil, sin complicaciones',
 			img: 'assets/banner3.png'
-		},
-		{
-			pretitle: 'Seguros',
-			title: 'Seguro Automotriz',
-			img: 'assets/banner-single1.png'
 		}
 	];
 

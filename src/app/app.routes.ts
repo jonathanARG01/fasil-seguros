@@ -23,5 +23,5 @@ export const routes: Routes = [
     { path: 'contacto',      component: ContactoComponent  },
     { path: 'siniestro',     component: SiniestroComponent },
     { path: 'thanks',        component: ThanksComponent    },
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
