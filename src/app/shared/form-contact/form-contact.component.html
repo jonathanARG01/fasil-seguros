@@ -32,7 +32,7 @@
 
             <!-- Rut (2) -->
             <div class="col-md-6 mb-2">
-                <label class="form-label">RUT *</label>
+                <label class="form-label">RUT * (181236548)</label>
                 <input type="text" class="form-control" name="rut" formControlName="rut" maxlength="9">
                 <span class="text-error" *ngIf="myFormCar.get('rut')?.hasError('invalidRut')">
                     RUT inválido
@@ -50,7 +50,7 @@
 
             <!-- Email (2) -->
             <div class="col-md-6 mb-2">
-                <label class="form-label">Correo electrónico *</label>
+                <label class="form-label">Correo electrónico * (contacto@gmail.com)</label>
                 <input type="email" class="form-control" name="email" formControlName="email">
                 <div *ngIf="myFormCar.get('email')?.touched">
                     <span class="text-error" *ngIf="myFormCar.get('email')?.hasError('required')">
@@ -72,7 +72,7 @@
 
             <!-- Telefono (2) -->
             <div class="col-md-6 mb-2">
-                <label class="form-label">Celular *</label>
+                <label class="form-label">Celular * (912345678)</label>
                 <input type="text" class="form-control" name="phone" formControlName="telefono" maxlength="9" (input)="validatePhoneInput($event)">
                 <div *ngIf="myFormCar.get('phone')?.touched">
                     <span class="text-error" *ngIf="myFormCar.get('telefono')?.hasError('required')">
