@@ -71,7 +71,7 @@
             <div class="col-md-6 mb-1">
                 <label class="form-label">Celular * (912345678)</label>
                 <input type="text" class="form-control" name="phone" formControlName="telefono" maxlength="9" (input)="validatePhoneInput($event)">
-                <div *ngIf="myFormCar.get('phone')?.touched">
+                <div *ngIf="myFormCar.get('telefono')?.touched">
                     <span class="text-error" *ngIf="myFormCar.get('telefono')?.hasError('required')">
                         Campo obligatorio
                     </span>
@@ -86,7 +86,7 @@
                     <span class="text-error" *ngIf="myFormGeneral.get('telefono')?.hasError('invalidLength')">
                         El Celular debe tener 9 números
                     </span>
-                </div>
+                </div>                
             </div>
             
             <!-- Marca -->
