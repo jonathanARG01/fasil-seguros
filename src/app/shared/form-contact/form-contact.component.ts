@@ -1,9 +1,9 @@
-import { Component, Input                     } from '@angular/core';
+import { Component, Input, ViewChild          } from '@angular/core';
 import { CommonModule                         } from '@angular/common';
 import { HttpClient, HttpHeaders              } from '@angular/common/http';
 import { Router 				              } from '@angular/router';
 import { AbstractControl, ReactiveFormsModule } from '@angular/forms';
-import { FormBuilder ,FormGroup, Validators   } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators   } from '@angular/forms';
 
 import Swal from 'sweetalert2';
 
@@ -26,6 +26,8 @@ export class FormContactComponent {
 	@Input() isGeneral!: boolean;
 	@Input() isCotizar!: boolean;
 
+	@ViewChild('modalCotizar') modalCotizar: any;
+
 
 	public myFormCar: FormGroup = this.fb.group({
 		nombre:      [ '', [Validators.required] ],
@@ -36,32 +38,16 @@ export class FormContactComponent {
 		marca:       [ '' ],
 		modelo:      [ '' ],
 		anio:        [ '' ],
-		patente:     [ '' ],
+		patente:     [ '', [Validators.required] ],
 		valor_cuota: [ '' ],
 		deducible:   [ '' ]
 	});
 
 
 	// rut:       [ '', [Validators.required, this.rutValidator]],
-	// telefono: [ '', [Validators.required, Validators.minLength(9), Validators.maxLength(9)] ],
+	// telefono:  [ '', [Validators.required, Validators.minLength(9), Validators.maxLength(9)] ],
 	// patente:   [ '', [Validators.required, this.patenteValidator ]],
-
-	// {
-	// 	"motivo_consulta": "Test",
-	// 	"nombre": "Juan",
-	// 	"apellido": "Perez",
-	// 	"rut": "11.111.111-1",
-	// 	"email": "test@test.cl",
-	// 	"telefono": "987654321",
-	// 	"marca": "Mazda",
-	// 	"modelo": "2 Sport",
-	// 	"anio": 2018,
-	// 	"patente": "KJBT84",
-	// 	"valor_cuota": 30000,
-	// 	"deducible": "5 UF",
-	// 	"comentarios": "Test"
-	//   }
-
+	
 	
 	public myFormGeneral: FormGroup = this.fb.group({
 		nombre:          [ '', [Validators.required] ],
@@ -92,8 +78,6 @@ export class FormContactComponent {
 		
 		this.myFormCar.get('phone')?.setValue(numericInput);
 	}
-
-
 
 
 	private rutValidator(control: AbstractControl): { [key: string]: boolean } | null {
@@ -142,10 +126,6 @@ export class FormContactComponent {
 		return null;
 	}
 	
-	
-	
-	
-	
 
 	isFieldInvalid(form: FormGroup, fieldName: string): boolean {
 		const field = form.get(fieldName);
@@ -180,81 +160,90 @@ export class FormContactComponent {
 	
 
 	// private patenteValidator(control: AbstractControl): { [key: string]: boolean } | null {
+			
+		// 	const value = control.value;
+			
+		// 	if (!value) {
+		// 	  	return null; // No mostrar error si el campo está vacío
+		// 	}
 		
-	// 	const value = control.value;
+		// 	// Expresión regular para validar patente chilena (formato: XXXX-XX)
+		// 	const patentePattern = /^[A-Z0-9]{4}-[A-Z0-9]{2}$/;
 		
-	// 	if (!value) {
-	// 	  	return null; // No mostrar error si el campo está vacío
-	// 	}
-	  
-	// 	// Expresión regular para validar patente chilena (formato: XXXX-XX)
-	// 	const patentePattern = /^[A-Z0-9]{4}-[A-Z0-9]{2}$/;
-	  
-	// 	if (!patentePattern.test(value)) {
-	// 	  	return { invalidPatente: true }; // Mostrar error si el formato no es válido
-	// 	}
-	  
-	// 	// Si pasa todas las validaciones, retorna null
-	// 	return null;
+		// 	if (!patentePattern.test(value)) {
+		// 	  	return { invalidPatente: true }; // Mostrar error si el formato no es válido
+		// 	}
+		
+		// 	// Si pasa todas las validaciones, retorna null
+		// 	return null;
+		
+		// }
+
+	// Marcar todos los controles en un grupo de formularios como tocados
 	
-	// }
+	
+	markFormGroupTouched(formGroup: FormGroup) {
+		Object.values(formGroup.controls).forEach(control => {
+			control.markAsTouched();
+		});
+	}
+	
 	
 
 	onSave(): void {
+
 		let formData: any;
 	  
 		if (this.isCar) {
-		  if (this.myFormCar.invalid) return;
-		  formData = this.myFormCar.value;
+		  	if (this.myFormCar.invalid) {
+				this.markFormGroupTouched(this.myFormCar);
+				return;
+			}
+		  	formData = this.myFormCar.value;
 		}
 	  
 		if (this.isGeneral) {
-		  if (this.myFormGeneral.invalid) return;
-		  formData = this.myFormGeneral.value;
+		  	if (this.myFormGeneral.invalid) {
+				this.markFormGroupTouched(this.myFormGeneral);
+				return;
+			}
+		  	formData = this.myFormGeneral.value;
 		}
 	  
 		// Formatear el RUT antes de enviarlo
-		if (formData.rut) {
-		  const rutValue = formData.rut.replace(/[^\dkK]/g, '');
-		  const rutDigits = rutValue.slice(0, -1);
-		  const verifierDigit = rutValue.slice(-1);
-		  const formattedRut = `${rutDigits.slice(0, 2)}.${rutDigits.slice(2, 5)}.${rutDigits.slice(5)}-${verifierDigit}`;
-		  formData.rut = formattedRut;
+		if ( formData.rut ) {
+		  	const rutValue      = formData.rut.replace(/[^\dkK]/g, '');
+		  	const rutDigits     = rutValue.slice(0, -1);
+		  	const verifierDigit = rutValue.slice(-1);
+		  	const formattedRut  = `${rutDigits.slice(0, 2)}.${rutDigits.slice(2, 5)}.${rutDigits.slice(5)}-${verifierDigit}`;
+		  	formData.rut        = formattedRut;
 		}
 	  
-		const url = 'https://leads.fasilseguros.cl/api/save';
+		const url     = 'https://leads.fasilseguros.cl/api/save';
 		const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 	  
 		console.log( formData );
 
-		this.http.post(url, formData, { headers }).subscribe(
-		  () => {
-			Swal.fire({
-			  icon: 'success',
-			  text: 'Tu información se ha enviado con éxito a nuestros ejecutivos, y te contactaremos lo más pronto posible, para que tu experiencia sea FASIL.'
-			});
-	  
-			if (this.isCar) {
-			  this.myFormCar.reset();
+		this.http.post(url, formData, { headers }).subscribe( () => {
+		
+				if (this.isCar) { this.myFormCar.reset(); }
+				if (this.isGeneral) { this.myFormGeneral.reset(); }
+				this.router.navigate(['/thanks']);
+
+			}, ( error ) => {
+
+				console.error('Error:', error);
+		
+				Swal.fire({
+					icon: 'error',
+					text: 'Hubo un error al enviar la información. Por favor, inténtalo de nuevo.'
+				});
+
 			}
-	  
-			if (this.isGeneral) {
-			  this.myFormGeneral.reset();
-			}
-	  
-			this.router.navigate(['/thanks']);
-		  },
-		  (error) => {
-			console.error('Error:', error);
-	  
-			Swal.fire({
-			  icon: 'error',
-			  text: 'Hubo un error al enviar la información. Por favor, inténtalo de nuevo.'
-			});
-		  }
+
 		);
-	  }
-	  
+	
+	}
 
 
 }

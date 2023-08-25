@@ -18,9 +18,9 @@ import { RouterModule } from '@angular/router';
 export class FooterComponent {
 
 
-	horario: string = '00:00 a 00:00hs';
-	phone:   string = '(+56) 987654321';
-	email:   string = 'nombre@fasilseguros.cl';
+	horario: string = ' 09:00 a 19:00 hrs';
+	phone:   string = '(+56) 981832477';
+	email:   string = 'contacto@fasilseguros.cl';
 
 	rrss: any = [
 		{

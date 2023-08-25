@@ -15,43 +15,38 @@
         <div class="row">
 
             <!-- Nombre (2) -->
-            <div class="col-md-6 mb-2">
+            <div class="col-md-6 mb-1">
                 <label class="form-label">Nombre *</label>
                 <input type="text" class="form-control" name="nombre" formControlName="nombre">
-                <span class="text-error" *ngIf="isFieldInvalid(myFormCar, 'nombre')">Campo obligatorio</span>
-                <span class="text-error" *ngIf="isFieldInvalid(myFormGeneral, 'nombre')">Campo obligatorio</span>
+                <span class="text-error" *ngIf="myFormCar.get('nombre')?.touched && myFormCar.get('nombre')?.hasError('required')">Campo obligatorio</span>
+                <span class="text-error" *ngIf="myFormGeneral.get('nombre')?.touched && myFormGeneral.get('nombre')?.hasError('required')">Campo obligatorio</span>
             </div>
 
             <!-- Apellido (2) -->
-            <div class="col-md-6 mb-2">
+            <div class="col-md-6 mb-1">
                 <label class="form-label">Apellido *</label>
                 <input type="text" class="form-control" name="apellido" formControlName="apellido">
-                <span class="text-error" *ngIf="isFieldInvalid(myFormCar, 'apellido')">Campo obligatorio</span>
-                <span class="text-error" *ngIf="isFieldInvalid(myFormGeneral, 'apellido')">Campo obligatorio</span>
+                <span class="text-error" *ngIf="myFormCar.get('apellido')?.touched && myFormCar.get('apellido')?.hasError('required')">Campo obligatorio</span>
+                <span class="text-error" *ngIf="myFormGeneral.get('apellido')?.touched && myFormGeneral.get('apellido')?.hasError('required')">Campo obligatorio</span>
             </div>
 
             <!-- Rut (2) -->
-            <div class="col-md-6 mb-2">
+            <div class="col-md-6 mb-1">
                 <label class="form-label">RUT * (181236548)</label>
                 <input type="text" class="form-control" name="rut" formControlName="rut" maxlength="9">
-                <span class="text-error" *ngIf="myFormCar.get('rut')?.hasError('invalidRut')">
-                    RUT inválido
-                </span>
-                <span class="text-error" *ngIf="myFormCar.get('rut')?.hasError('invalidLength')">
-                    El RUT debe tener 8 o 9 caracteres
-                </span>
-                <span class="text-error" *ngIf="myFormGeneral.get('rut')?.hasError('invalidRut')">
-                    RUT inválido
-                </span>
-                <span class="text-error" *ngIf="myFormGeneral.get('rut')?.hasError('invalidLength')">
-                    El RUT debe tener 8 o 9 caracteres
-                </span>
+                <span class="text-error" *ngIf="myFormCar.get('rut')?.touched && myFormCar.get('rut')?.hasError('required')">Campo obligatorio</span>
+                <span class="text-error" *ngIf="myFormCar.get('rut')?.touched && myFormCar.get('rut')?.hasError('invalidRut')">RUT inválido</span>
+                <span class="text-error" *ngIf="myFormCar.get('rut')?.touched && myFormCar.get('rut')?.hasError('invalidLength')">El RUT debe tener 8 o 9 caracteres</span>
+                <span class="text-error" *ngIf="myFormGeneral.get('rut')?.touched && myFormGeneral.get('rut')?.hasError('required')">Campo obligatorio</span>
+                <span class="text-error" *ngIf="myFormGeneral.get('rut')?.touched && myFormGeneral.get('rut')?.hasError('invalidRut')">RUT inválido</span>
+                <span class="text-error" *ngIf="myFormGeneral.get('rut')?.touched && myFormGeneral.get('rut')?.hasError('invalidLength')">El RUT debe tener 8 o 9 caracteres</span>
             </div>
 
             <!-- Email (2) -->
-            <div class="col-md-6 mb-2">
+            <div class="col-md-6 mb-1">
                 <label class="form-label">Correo electrónico * (contacto@gmail.com)</label>
                 <input type="email" class="form-control" name="email" formControlName="email">
+                
                 <div *ngIf="myFormCar.get('email')?.touched">
                     <span class="text-error" *ngIf="myFormCar.get('email')?.hasError('required')">
                         Campo obligatorio
@@ -60,6 +55,7 @@
                         Debe ser un correo electrónico válido
                     </span>
                 </div>
+
                 <div *ngIf="myFormGeneral.get('email')?.touched">
                     <span class="text-error" *ngIf="myFormGeneral.get('email')?.hasError('required')">
                         Campo obligatorio
@@ -68,10 +64,11 @@
                         Debe ser un correo electrónico válido
                     </span>
                 </div>
+
             </div>
 
             <!-- Telefono (2) -->
-            <div class="col-md-6 mb-2">
+            <div class="col-md-6 mb-1">
                 <label class="form-label">Celular * (912345678)</label>
                 <input type="text" class="form-control" name="phone" formControlName="telefono" maxlength="9" (input)="validatePhoneInput($event)">
                 <div *ngIf="myFormCar.get('phone')?.touched">
@@ -93,106 +90,105 @@
             </div>
             
             <!-- Marca -->
-            <div class="col-md-6 mb-2" *ngIf="isCar">
+            <div class="col-md-6 mb-1" *ngIf="isCar">
                 <label class="form-label">Marca</label>
                 <select class="form-select" name="marca" formControlName="marca">
                     <option selected>Selecciona una marca</option>
-                    <option value="toyota">Toyota</option>
-                    <option value="chevrolet">Chevrolet</option>
-                    <option value="suzuki">Suzuki</option>
-                    <option value="peugeot">Peugeot</option>
-                    <option value="kia">Kia</option>
-                    <option value="nissan">Nissan</option>
-                    <option value="ford">Ford</option>
-                    <option value="volkswagen">Volkswagen</option>
-                    <option value="mg">MG</option>
-                    <option value="mazda">Mazda</option>
-                    <option value="changan">Changan</option>
-                    <option value="great-wall">Great Wall</option>
-                    <option value="maxus">Maxus</option>
-                    <option value="chery">Chery</option>
-                    <option value="jac">JAC</option>
-                    <option value="haval">Haval</option>
-                    <option value="subaru">Subaru</option>
-                    <option value="citroen">Citroen</option>
-                    <option value="mitsubishi">Mitsubishi</option>
-                    <option value="ram">RAM</option>
-                    <option value="dfsk">DFSK</option>
-                    <option value="foton">Foton</option>
-                    <option value="ssangyong">SsangYong</option>
-                    <option value="renault">Renault</option>
-                    <option value="opel">Opel</option>
-                    <option value="jetour">Jetour</option>
-                    <option value="bmw">BMW</option>
-                    <option value="honda">Honda</option>
-                    <option value="mercedes-benz">Mercedes Benz</option>
-                    <option value="gac-motor">GAC Motor</option>
-                    <option value="brilliance">Brilliance</option>
-                    <option value="geely">Geely</option>
-                    <option value="baic">BAIC</option>
-                    <option value="jmc">JMC</option>
-                    <option value="jeep">Jeep</option>
-                    <option value="audi">Audi</option>
-                    <option value="kyc">KYC</option>
-                    <option value="volvo">Volvo</option>
-                    <option value="exeed">Exeed</option>
-                    <option value="kaiyi">Kaiyi</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="skoda">Skoda</option>
-                    <option value="mahindra">Mahindra</option>
-                    <option value="seat">SEAT</option>
-                    <option value="karry">Karry</option>
-                    <option value="dfm">DFM</option>
-                    <option value="mini">MINI</option>
-                    <option value="ds">DS</option>
-                    <option value="cupra">CUPRA</option>
-                    <option value="zna">ZNA</option>
-                    <option value="fuso">Fuso</option>
-                    <option value="lexus">Lexus</option>
-                    <option value="land-rover">Land Rover</option>
-                    <option value="porsche">Porsche</option>
-                    <option value="byd">BYD</option>
-                    <option value="dong-feng">Dong Feng</option>
                     <option value="alfa-romeo">Alfa Romeo</option>
-                    <option value="iveco">IVECO</option>
-                    <option value="zxauto">ZXAUTO</option>
-                    <option value="maserati">Maserati</option>
-                    <option value="dodge">Dodge</option>
-                    <option value="jaguar">Jaguar</option>
-                    <option value="ferrari">Ferrari</option>
-                    <option value="chrysler">Chrysler</option>
+                    <option value="audi">Audi</option>
+                    <option value="baic">BAIC</option>
                     <option value="bentley">Bentley</option>
+                    <option value="bmw">BMW</option>
+                    <option value="byd">BYD</option>
+                    <option value="changan">Changan</option>
+                    <option value="chery">Chery</option>
+                    <option value="chevrolet">Chevrolet</option>
+                    <option value="chrysler">Chrysler</option>
+                    <option value="citroen">Citroen</option>
+                    <option value="cupra">CUPRA</option>
+                    <option value="dfm">DFM</option>
+                    <option value="dfsk">DFSK</option>
+                    <option value="dodge">Dodge</option>
+                    <option value="dong-feng">Dong Feng</option>
+                    <option value="ds">DS</option>
+                    <option value="exeed">Exeed</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="ferrari">Ferrari</option>
+                    <option value="foton">Foton</option>
+                    <option value="ford">Ford</option>
+                    <option value="fuso">Fuso</option>
+                    <option value="gac-motor">GAC Motor</option>
+                    <option value="geely">Geely</option>
+                    <option value="great-wall">Great Wall</option>
+                    <option value="haval">Haval</option>
+                    <option value="honda">Honda</option>
+                    <option value="iveco">IVECO</option>
+                    <option value="jac">JAC</option>
+                    <option value="jaguar">Jaguar</option>
+                    <option value="jeep">Jeep</option>
+                    <option value="jetour">Jetour</option>
+                    <option value="jmc">JMC</option>
+                    <option value="kaiyi">Kaiyi</option>
+                    <option value="karry">Karry</option>
+                    <option value="kia">Kia</option>
+                    <option value="kyc">KYC</option>
+                    <option value="land-rover">Land Rover</option>
+                    <option value="lexus">Lexus</option>
+                    <option value="mahindra">Mahindra</option>
+                    <option value="maserati">Maserati</option>
+                    <option value="mazda">Mazda</option>
+                    <option value="maxus">Maxus</option>
+                    <option value="mercedes-benz">Mercedes Benz</option>
+                    <option value="mg">MG</option>
+                    <option value="mini">MINI</option>
+                    <option value="mitsubishi">Mitsubishi</option>
+                    <option value="nissan">Nissan</option>
+                    <option value="opel">Opel</option>
+                    <option value="peugeot">Peugeot</option>
+                    <option value="porsche">Porsche</option>
+                    <option value="ram">RAM</option>
+                    <option value="renault">Renault</option>
+                    <option value="seat">SEAT</option>
+                    <option value="skoda">Skoda</option>
+                    <option value="ssangyong">SsangYong</option>
+                    <option value="subaru">Subaru</option>
+                    <option value="suzuki">Suzuki</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="volkswagen">Volkswagen</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="zna">ZNA</option>
+                    <option value="zxauto">ZXAUTO</option>
                     <option value="otros">Otros</option>
                 </select>
             </div>
 
             <!-- Motivo -->
-            <div class="col-md-6 mb-2" *ngIf="isGeneral">
+            <div class="col-md-6 mb-1" *ngIf="isGeneral">
                 <label class="form-label">Motivo de tu consulta *</label>
                 <select class="form-select" name="motivo_consulta" formControlName="motivo_consulta">
                     <option selected>Selecciona un motivo...</option>
-                    <option value="cotizacion-seguro">Cotización seguro</option>
-                    <option value="siniestro">Siniestro</option>
-                    <option value="pagos">Pagos</option>
-                    <option value="cambios-poliza">Cambios en póliza</option>
+                    <option value="Cotizacion-seguro">Cotización seguro</option>
+                    <option value="Siniestro">Siniestro</option>
+                    <option value="Pagos">Pagos</option>
+                    <option value="Cambios-poliza">Cambios en póliza</option>
                 </select>
                 <span class="text-error" *ngIf="isFieldInvalid(myFormGeneral, 'motivo_consulta')">Campo obligatorio</span>
             </div>
 
             <!-- Modelo -->
-            <div class="col-md-6 mb-2" *ngIf="isCar">
+            <div class="col-md-6 mb-1" *ngIf="isCar">
                 <label class="form-label">Modelo</label>
                 <input type="text" class="form-control" name="modelo" formControlName="modelo">
             </div>
 
             <!-- Año -->
-            <div class="col-md-6 mb-2" *ngIf="isCar">
+            <div class="col-md-6 mb-1" *ngIf="isCar">
                 <label class="form-label">Año</label>
                 <input type="text" class="form-control" name="anio" formControlName="anio">
             </div>
 
             <!-- Patente -->
-            <div class="col-md-6 mb-2" *ngIf="isCar">
+            <div class="col-md-6 mb-1" *ngIf="isCar">
                 <label class="form-label">Patente *</label>
                 <input type="text" class="form-control" name="patente" formControlName="patente" (input)="formatPatente($event)" (blur)="myFormCar.get('patente')?.updateValueAndValidity()">
                 
@@ -203,19 +199,19 @@
             </div>
 
             <!-- Cuota -->
-            <div class="col-md-6 mb-2" *ngIf="isCar">
+            <div class="col-md-6 mb-1" *ngIf="isCar">
                 <label class="form-label">Valor cuota actual</label>
                 <input type="text" class="form-control" name="valor_cuota" formControlName="valor_cuota">
             </div>
 
             <!-- Deducible -->
-            <div class="mb-2" *ngIf="isCar">
+            <div class="mb-1" *ngIf="isCar">
                 <label class="form-label">Deducible</label>
                 <input type="text" class="form-control" name="deducible" formControlName="deducible">
             </div>
 
             <!-- Comentarios -->
-            <div class="mb-2" *ngIf="isGeneral">
+            <div class="mb-1" *ngIf="isGeneral">
                 <label class="form-label">Comentarios o Preguntas</label>
                 <textarea class="form-control" rows="3" name="comentarios" formControlName="comentarios"></textarea>
             </div>

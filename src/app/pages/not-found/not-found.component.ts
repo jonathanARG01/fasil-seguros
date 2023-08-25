@@ -1,5 +1,6 @@
 import { Component    } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 
@@ -7,7 +8,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 @Component({
   	selector: 'not-found',
   	standalone: true,
-  	imports: [CommonModule],
+  	imports: [CommonModule, RouterModule],
   	templateUrl: './not-found.component.html',
   	styleUrls: ['./not-found.component.scss'],
 	animations: [
