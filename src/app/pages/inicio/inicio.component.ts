@@ -23,7 +23,6 @@ import { FooterComponent   } from 'src/app/shared/footer/footer.component';
 		MessagesComponent,
 		DiscoverComponent,
 		FooterComponent
-		
 	],
   	templateUrl: './inicio.component.html',
   	styleUrls: ['./inicio.component.scss'],
@@ -41,6 +40,6 @@ import { FooterComponent   } from 'src/app/shared/footer/footer.component';
 
 export class InicioComponent {
 
-
+	
 
 }

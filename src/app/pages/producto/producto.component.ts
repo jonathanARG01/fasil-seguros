@@ -1,6 +1,6 @@
 import { Component      } from '@angular/core';
 import { CommonModule   } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 import { Producto } from 'src/app/interfaces/producto.interface';
@@ -26,7 +26,8 @@ import { FooterComponent        } from 'src/app/shared/footer/footer.component';
 		BenefitsComponent,
 		UnderstandingComponent,
 		TipsComponent,
-		FooterComponent
+		FooterComponent,
+		RouterModule
 	],
   	templateUrl: './producto.component.html',
   	styleUrls: ['./producto.component.scss'],

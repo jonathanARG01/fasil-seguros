@@ -1,5 +1,6 @@
 import { Component    } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 import { BannerSiniestroComponent } from 'src/app/sections/banner-siniestro/banner-siniestro.component';
@@ -10,7 +11,7 @@ import { FooterComponent } from 'src/app/shared/footer/footer.component';
 @Component({
   	selector: 'app-siniestro',
   	standalone: true,
-  	imports: [CommonModule, BannerSiniestroComponent, FooterComponent],
+  	imports: [CommonModule, BannerSiniestroComponent, FooterComponent, RouterModule],
   	templateUrl: './siniestro.component.html',
   	styleUrls: ['./siniestro.component.scss'],
 	animations: [

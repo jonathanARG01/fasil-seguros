@@ -1,4 +1,15 @@
-<div [@pageTransition] class="page page-transition">
+<div id="page" [@pageTransition] class="page page-transition">
+
+    <nav class="container p-0 mt-3" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item breadcrumb-item-link">
+                <a routerLink="/inicio"><img src="assets/icon-home-bread.svg"> Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a>Denuncia tu siniestro</a>
+            </li>
+        </ol>
+    </nav>
 
     <app-banner-siniestro />
 

@@ -1,6 +1,7 @@
 // Angular
 import { Component    } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 // Components
@@ -12,7 +13,7 @@ import { FooterComponent      } from 'src/app/shared/footer/footer.component';
 @Component({
   	selector: 'app-contacto',
   	standalone: true,
-  	imports: [CommonModule, FormContactComponent,FooterComponent],
+  	imports: [CommonModule, FormContactComponent, FooterComponent, RouterModule],
   	templateUrl: './contacto.component.html',
   	styleUrls: ['./contacto.component.scss'],
 	animations: [

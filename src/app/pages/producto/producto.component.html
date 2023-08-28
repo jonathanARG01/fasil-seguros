@@ -7,7 +7,21 @@
 </ng-template>
 
 
-<div *ngIf="product; else loading" [@pageTransition] class="page page-transition">
+<div id="page" *ngIf="product; else loading" [@pageTransition] class="page page-transition">
+
+    <nav class="container p-0 mt-3" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item breadcrumb-item-link">
+                <a routerLink="/inicio"><img src="assets/icon-home-bread.svg"> Home</a>
+            </li>
+            <li class="breadcrumb-item breadcrumb-item-link">
+                <a routerLink="/productos">Productos</a>
+            </li>
+            <li class="breadcrumb-item breadcrumb-item-link">
+                <a> {{ product.name }} </a>
+            </li>
+        </ol>
+    </nav>    
 
     <banner-single [product]="product"/>
     <contenido />

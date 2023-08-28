@@ -27,6 +27,7 @@
                     
                     <a id="expand-menu" class="nav-link" (click)="toggleMenu()">
                         Productos
+                        <img class="arrow" src="assets/icon-arrow-down.svg">
                     </a>
                     
                     <div class="menu-flotante" [ngClass]="{'expanded': isMenuExpanded}" [@menuAnimation]="isMenuExpanded ? 'slideIn' : 'slideOut'">
@@ -59,13 +60,13 @@
                                         </h6>
                                         <ul class="options">
                                             <li>
-                                                <a routerLink="/productos/1">Seguro Automotriz</a>
+                                                <a routerLink="/productos/1" (click)="closeMenu()">Seguro Automotriz</a>
                                             </li>
                                             <li>
-                                                <a routerLink="/productos/2">Seguro Moto</a>
+                                                <a routerLink="/productos/2" (click)="closeMenu()">Seguro Moto</a>
                                             </li>
                                             <li>
-                                                <a routerLink="/productos/3">SOAP</a>
+                                                <a routerLink="/productos/3" (click)="closeMenu()">SOAP</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -77,10 +78,10 @@
                                         </h6>
                                         <ul class="options">
                                             <li>
-                                                <a routerLink="/productos/7">Seguro Asistencia en viaje</a>
+                                                <a routerLink="/productos/7" (click)="closeMenu()">Seguro Asistencia en viaje</a>
                                             </li>
                                             <li>
-                                                <a routerLink="/productos/8">RCI (Responsabilidad Civil Internacional)</a>
+                                                <a routerLink="/productos/8" (click)="closeMenu()">RCI (Responsabilidad Civil Internacional)</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -92,13 +93,13 @@
                                         </h6>
                                         <ul class="options">
                                             <li>
-                                                <a routerLink="/productos/4">Seguro complementario de salud (con consulta de Telemedicina)</a>
+                                                <a routerLink="/productos/4" (click)="closeMenu()">Seguro complementario de salud (con consulta de Telemedicina)</a>
                                             </li>
                                             <li>
-                                                <a routerLink="/productos/5">Seguro complementario de salud individual</a>
+                                                <a routerLink="/productos/5" (click)="closeMenu()">Seguro complementario de salud individual</a>
                                             </li>
                                             <li>
-                                                <a routerLink="/productos/6">Seguro Accidentes Personales</a>
+                                                <a routerLink="/productos/6" (click)="closeMenu()">Seguro Accidentes Personales</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -110,7 +111,7 @@
                                         </h6>
                                         <ul class="options">
                                             <li>
-                                                <a routerLink="/productos/9">Seguro Incendio hogar</a>
+                                                <a routerLink="/productos/9" (click)="closeMenu()">Seguro Incendio hogar</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -130,19 +131,19 @@
                                         </h6>
                                         <ul class="options">
                                             <li>
-                                                <a routerLink="/productos/10">Seguro incendio</a>
+                                                <a routerLink="/productos/10" (click)="closeMenu()">Seguro incendio</a>
                                             </li>
                                             <li>
-                                                <a routerLink="/productos/11">Seguro Pyme</a>
+                                                <a routerLink="/productos/11" (click)="closeMenu()">Seguro Pyme</a>
                                             </li>
                                             <li>
-                                                <a routerLink="/productos/12">Seguro Todo Riesgo de Construcción</a>
+                                                <a routerLink="/productos/12" (click)="closeMenu()">Seguro Todo Riesgo de Construcción</a>
                                             </li>
                                             <li>
-                                                <a routerLink="/productos/13">Seguro Todo Riesgo Montaje</a>
+                                                <a routerLink="/productos/13" (click)="closeMenu()">Seguro Todo Riesgo Montaje</a>
                                             </li>
                                             <li>
-                                                <a routerLink="/productos/14">Seguro Equipo Contratista</a>
+                                                <a routerLink="/productos/14" (click)="closeMenu()">Seguro Equipo Contratista</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -154,16 +155,16 @@
                                         </h6>
                                         <ul class="options">
                                             <li>
-                                                <a routerLink="/productos/15">Seguro Equipos Electrónicos</a>
+                                                <a routerLink="/productos/15" (click)="closeMenu()">Seguro Equipos Electrónicos</a>
                                             </li>
                                             <li>
-                                                <a routerLink="/productos/16">Responsabilidad Civil</a>
+                                                <a routerLink="/productos/16" (click)="closeMenu()">Responsabilidad Civil</a>
                                             </li>
                                             <li>
-                                                <a routerLink="/productos/17">Incendio Comunidad</a>
+                                                <a routerLink="/productos/17" (click)="closeMenu()">Incendio Comunidad</a>
                                             </li>
                                             <li>
-                                                <a routerLink="/productos/18">Seguro automotriz (flotas)</a>
+                                                <a routerLink="/productos/18" (click)="closeMenu()">Seguro automotriz (flotas)</a>
                                             </li>
                                         </ul>
                                     </div>
