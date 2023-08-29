@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
@@ -28,34 +28,41 @@ export class NavbarComponent {
 
     isMenuExpanded: boolean = false;
 
-    constructor(private elementRef: ElementRef ) {}
+    constructor( private elementRef: ElementRef, private router: Router ) {}
 
+
+    ngOnInit() {
+        this.scrollToTopOnRouteChange();
+    }
+    
 
     toggleMenu() {
-        this.scrollToTop();
+        this.scrollToTopOnRouteChange();
         this.isMenuExpanded = !this.isMenuExpanded;
     }
 
 
     closeMenu() {
-        this.scrollToTop();
+        this.scrollToTopOnRouteChange();
         this.isMenuExpanded = false;
     }
 
 
-    scrollToTop() {
-        const element = document.getElementById('page');
-
-        if ( element ) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+    scrollToTopOnRouteChange() {
+        this.router.events.subscribe(event => {
+            if (event instanceof NavigationEnd) {
+                const element = document.getElementById('page_top');
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
     }
 
 
     // Escucha el evento click del documento
     @HostListener('document:click', ['$event'])
     handleClick(event: MouseEvent) {
-        this.scrollToTop();
         // Comprueba si el clic ocurrió fuera del área del menú flotante
         if (!this.elementRef.nativeElement.contains(event.target)) {
             this.isMenuExpanded = false;
