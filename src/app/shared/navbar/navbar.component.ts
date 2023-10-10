@@ -28,6 +28,7 @@ export class NavbarComponent {
 
     isMenuExpanded: boolean = false;
 
+    
     constructor( private elementRef: ElementRef, private router: Router ) {}
 
 
@@ -68,5 +69,6 @@ export class NavbarComponent {
             this.isMenuExpanded = false;
         }
     }
+
 
 }

@@ -16,11 +16,31 @@
             <ul class="navbar-nav me-md-5">
                 
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/inicio" routerLinkActive="active" (click)="closeMenu()">Inicio</a>
+                    <a
+                        class="nav-link"
+                        routerLink="/inicio"
+                        routerLinkActive="active"
+                        (click)="closeMenu()"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">Inicio</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/nosotros" routerLinkActive="active" (click)="closeMenu()">Nosotros</a>
+                    <a
+                        class="nav-link"
+                        routerLink="/nosotros"
+                        routerLinkActive="active"
+                        (click)="closeMenu()"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        Nosotros
+                    </a>
                 </li>
 
                 <li id="menu-desk" class="nav-item dropdown">
@@ -186,7 +206,12 @@
                 </li>
 
                 <li id="menu-res" class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         Productos
                     </a>
                     <ul class="dropdown-menu">
@@ -198,13 +223,37 @@
                             </h6>
                             <ul class="options">
                                 <li>
-                                    <a href="#">Seguro Automotriz</a>
+                                    <a
+                                        routerLink="/productos/1"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarSupportedContent"
+                                        aria-controls="navbarSupportedContent"
+                                        aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        Seguro Automotriz
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#">Seguro Moto</a>
+                                    <a 
+                                        routerLink="/productos/2"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarSupportedContent"
+                                        aria-controls="navbarSupportedContent"
+                                        aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        Seguro Moto
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#">SOAP</a>
+                                    <a
+                                        routerLink="/productos/3"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarSupportedContent"
+                                        aria-controls="navbarSupportedContent"
+                                        aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        SOAP
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -216,10 +265,26 @@
                             </h6>
                             <ul class="options">
                                 <li>
-                                    <a href="#">Seguro Asistencia en viaje</a>
+                                    <a 
+                                        routerLink="/productos/7"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarSupportedContent"
+                                        aria-controls="navbarSupportedContent"
+                                        aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        Seguro Asistencia en viaje
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#">RCI (Responsabilidad Civil Internacional)</a>
+                                    <a
+                                        routerLink="/productos/8"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarSupportedContent"
+                                        aria-controls="navbarSupportedContent"
+                                        aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        RCI (Responsabilidad Civil Internacional)
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -231,7 +296,37 @@
                             </h6>
                             <ul class="options">
                                 <li>
-                                    <a href="#">Seguro Accidentes Personales</a>
+                                    <a
+                                        routerLink="/productos/4"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarSupportedContent"
+                                        aria-controls="navbarSupportedContent"
+                                        aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        Seguro complementario de salud (con consulta de Telemedicina)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        routerLink="/productos/5"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarSupportedContent"
+                                        aria-controls="navbarSupportedContent"
+                                        aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        Seguro complementario de salud individual
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        routerLink="/productos/6"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarSupportedContent"
+                                        aria-controls="navbarSupportedContent"
+                                        aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        Seguro Accidentes Personales
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -243,14 +338,30 @@
                             </h6>
                             <ul class="options">
                                 <li>
-                                    <a href="#">Seguro Incendio hogar</a>
+                                    <a
+                                        routerLink="/productos/9"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarSupportedContent"
+                                        aria-controls="navbarSupportedContent"
+                                        aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        Seguro Incendio hogar
+                                    </a>
                                 </li>
                             </ul>
                         </div>
 
                         <div class="line"></div>
 
-                        <a class="all" routerLink="/productos" routerLinkActive="active">
+                        <a
+                            class="all"
+                            routerLink="/productos"
+                            routerLinkActive="active"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
                             Ver todo
                         </a>
 
@@ -259,12 +370,32 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/siniestro" routerLinkActive="active" (click)="closeMenu()">Denuncia tu siniestro</a>
+                    <a
+                        class="nav-link"
+                        routerLink="/siniestro"
+                        routerLinkActive="active"
+                        (click)="closeMenu()"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        Denuncia tu siniestro
+                    </a>
                 </li>
 
             </ul>
             
-            <button routerLink="/contacto" routerLinkActive="active" class="btn-blue-wave wave-button" (click)="closeMenu()">
+            <button
+                routerLink="/contacto"
+                routerLinkActive="active"
+                class="btn-blue-wave wave-button"
+                (click)="closeMenu()"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span>Contacto</span>
                 <div class="wave"></div>
             </button>           

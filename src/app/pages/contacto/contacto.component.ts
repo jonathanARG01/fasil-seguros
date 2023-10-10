@@ -29,10 +29,6 @@ import { FooterComponent      } from 'src/app/shared/footer/footer.component';
 
 
 export class ContactoComponent {
-
-	
 	isCar: boolean = true;
 	isGeneral: boolean = true;
-	
-
 }

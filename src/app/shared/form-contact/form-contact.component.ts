@@ -146,16 +146,25 @@ export class FormContactComponent {
 		  	const thirdPart  = patenteValue.slice(4);
 		  	patenteValue     = `${firstPart}-${secondPart}-${thirdPart}`;
 
+			if ( event.inputType === "deleteContentBackward" || event.inputType === "deleteContentForward" ) {				
+				patenteValue = `${firstPart}${secondPart}${thirdPart}`;
+			} 
+
 		} else if ( patenteValue.length > 1 ) {
 
 		  	const firstPart  = patenteValue.slice(0, 2);
 		  	const secondPart = patenteValue.slice(2);
 		  	patenteValue     = `${firstPart}-${secondPart}`;
+
+			  if ( event.inputType === "deleteContentBackward" || event.inputType === "deleteContentForward" ) {				
+				patenteValue = `${firstPart}${secondPart}`;
+			} 
 		
 		}
-	  
+
 		input.value = patenteValue;
 		this.myFormCar.get('patente')?.setValue(patenteValue, { emitEvent: false });
+		
 	}
 	
 
