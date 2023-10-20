@@ -102,7 +102,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'personas',
 			category: 'auto',
-			banner: '',
+			banner: 'assets/banner-moto.png',
 			content: []
 		},
 		{
@@ -181,7 +181,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'personas',
 			category: 'salud',
-			banner: '',
+			banner: 'assets/banner-salud.png',
 			content: []
 		},
 		{
@@ -192,7 +192,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'personas',
 			category: 'salud',
-			banner: '',
+			banner: 'assets/banner-salud.png',
 			content: []
 		},
 		{
@@ -203,7 +203,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'personas',
 			category: 'salud',
-			banner: '',
+			banner: 'assets/banner-salud.png',
 			content: []
 		},
 		{
@@ -214,7 +214,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'personas',
 			category: 'viajes',
-			banner: '',
+			banner: 'assets/banner-viajes.png',
 			content: []
 		},
 		{
@@ -225,7 +225,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'personas',
 			category: 'viajes',
-			banner: '',
+			banner: 'assets/banner-viajes.png',
 			content: []
 		},
 		{
@@ -236,7 +236,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'personas',
 			category: 'hogar',
-			banner: '',
+			banner: 'assets/banner-hogar.png',
 			content: []
 		},
 		{
@@ -247,7 +247,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'empresas',
 			category: 'empresa',
-			banner: '',
+			banner: 'assets/banner-empresas.png',
 			content: []
 		},
 		{
@@ -258,7 +258,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'empresas',
 			category: 'empresa',
-			banner: '',
+			banner: 'assets/banner-empresas.png',
 			content: []
 		},
 		{
@@ -269,7 +269,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'empresas',
 			category: 'empresa',
-			banner: '',
+			banner: 'assets/banner-empresas.png',
 			content: []
 		},
 		{
@@ -280,7 +280,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'empresas',
 			category: 'empresa',
-			banner: '',
+			banner: 'assets/banner-empresas.png',
 			content: []
 		},
 		{
@@ -291,7 +291,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'empresas',
 			category: 'empresa',
-			banner: '',
+			banner: 'assets/banner-empresas.png',
 			content: []
 		},
 		{
@@ -302,7 +302,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'empresas',
 			category: 'empresa',
-			banner: '',
+			banner: 'assets/banner-empresas.png',
 			content: []
 		},
 		{
@@ -313,7 +313,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'empresas',
 			category: 'empresa',
-			banner: '',
+			banner: 'assets/banner-empresas.png',
 			content: []
 		},
 		{
@@ -324,7 +324,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'empresas',
 			category: 'empresa',
-			banner: '',
+			banner: 'assets/banner-empresas.png',
 			content: []
 		},
 		{
@@ -335,7 +335,7 @@ export class ProductosService {
 			nocover: [],
 			type: 'empresas',
 			category: 'empresa',
-			banner: '',
+			banner: 'assets/banner-empresas.png',
 			content: []
 		}
 	];
