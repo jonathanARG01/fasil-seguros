@@ -32,19 +32,23 @@ export class SiniestroComponent {
 	aseguradoras: any = [
 		{
 			name: 'bci seguros',
-			logo: 'assets/logo-bci.svg'
+			logo: 'assets/logo-bci.svg',
+			link: 'https://denunciowebvehiculo.bciseguros.cl/inicio?utm_source=web&utm_medium=WL&utm_campaign=denuncioHomehuincha'
 		},
 		{
 			name: 'hdi seguros',
-			logo: 'assets/logo-hdi.svg'
+			logo: 'assets/logo-hdi.svg',
+			link: 'https://www.hdi.cl/hdi-seguros-home/denunciar-siniestro/'
 		},
 		{
 			name: 'liberty seguros',
-			logo: 'assets/logo-liberty.svg'
+			logo: 'assets/logo-liberty.svg',
+			link: 'https://denuncio.liberty.cl/#_gl=1*zly01b*_gcl_au*MTk4MDg5ODExMi4xNjk3ODA2NjAx'
 		},
 		{
 			name: 'reale seguros',
-			logo: 'assets/logo-reale.svg'
+			logo: 'assets/logo-reale.svg',
+			link: 'https://www.reale.cl/denunciar-un-siniestro/'
 		}
 	];
 

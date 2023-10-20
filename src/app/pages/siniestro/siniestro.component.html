@@ -25,10 +25,10 @@
                         <img [src]="aseguradora.logo" [alt]="aseguradora.name">
                     </div>
                     
-                    <button class="btn-blue-wave wave-button" (click)="verAseguradora( aseguradora.name )">
+                    <a class="btn-blue-wave wave-button" [href]="aseguradora.link" target="_blank">
                         <span>Denunciar siniestro</span>
                         <div class="wave"></div>
-                    </button>
+                    </a>
 
                 </div>
 

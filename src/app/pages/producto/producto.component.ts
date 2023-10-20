@@ -61,7 +61,6 @@ export class ProductoComponent {
 	  
 			this.productsService.getProductById(id).subscribe((project: Producto | undefined) => {
 				
-				console.log('project:', project);
 				this.isLoading = false;
 				this.product = project;
 
