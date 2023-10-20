@@ -57,8 +57,8 @@ export class ProductoComponent {
 	
 		this.activatedRoute.params.subscribe(params => {
 	
-			const id = +params['id'];
-	  
+			const id = params['id'].toString();
+			
 			this.productsService.getProductById(id).subscribe((project: Producto | undefined) => {
 				
 				this.isLoading = false;

@@ -35,7 +35,7 @@ export class ProductosService {
 
 	private productos: Producto[] = [
 		{
-			id: 1,
+			id: 'seguro-automotriz',
 			name: 'Seguro Automotriz',
 			description: 'Protege tu inversión sobre daños, robos o accidentes, con un seguro automotriz y cuida tu patrimonio. Cubre daños propios como a terceros.',
 			cover: ['Daños materiales', 'Robos de accesorios', 'Robo, hurto y uso no autorizado', 'Huelga, Terrorismo', 'Actos maliciosos', 'Sismo granizo y otros riesgos de naturaleza', 'Defensa penal', 'Responsabilidad civil', 'Daños a terceros por conductor dependiente', 'Entre otros'],
@@ -95,7 +95,7 @@ export class ProductosService {
 			]
 		},
 		{
-			id: 2,
+			id: 'seguro-moto',
 			name: 'Seguro Moto',
 			description: 'Cobertura de daños materiales, robo o uso no autorizado o responsabilidad civil. Dale tranquilidad a tu vida, al tener un seguro de protección para tu inversión “tu regalona”, ”tu amiga” o ”tu compañera de viaje”.',
 			cover: [],
@@ -106,7 +106,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 3,
+			id: 'soap',
 			name: 'SOAP',
 			description: 'Seguro Obligatorio de Accidentes Personales. Este seguro es un requisito obligatorio para transitar en territorio Chileno. Da cobertura a personas en caso de lesiones corporales o muerte por consecuencias de un accidente en el que el vehículo asegurado participe.',
 			cover: [],
@@ -174,7 +174,7 @@ export class ProductosService {
 			]
 		},
 		{
-			id: 4,
+			id: 'seguro-complementario-de-salud',
 			name: 'Seguro complementario de salud (con consulta de Telemedicina)',
 			description: 'Planes de 60%, 70% y 80% de cobertura de copago. Hasta 5 cargas adicionales. Prestaciones ambulatorias, Hospitalarias, Maternidad, Psiquiátricas y Psicológicas, etc. Cobertura en el extranjero en accidentes y urgencias. Cobertura en medicamentos.',
 			cover: [],
@@ -185,7 +185,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 5,
+			id: 'seguro-complementario-de-salud-individual',
 			name: 'Seguro complementario de salud individual',
 			description: '¡Protegemos tu salud y la de los que más quieres! Complementa tu plan Fonasa o Isapre y reduce un 60%, 70% u 80% los gastos médicos por consultas, tratamientos, procedimientos y exámenes hasta cinco cargas adicionales. TIENES TELECONSULTAS GRATIS ILIMITADAS, en donde doctores te pueden dar recetas, ordenes, revisión de exámenes, etc.',
 			cover: [],
@@ -196,7 +196,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 6,
+			id: 'seguro-de-accidentes-personales',
 			name: 'Seguro de Accidentes Personales',
 			description: 'Cubre al asegurado o a sus beneficiarios, las lesiones corporales, la incapacidad o la muerte que éste sufra a consecuencias de un accidente que haya ocurrido durante la vigencia de la póliza.',
 			cover: [],
@@ -207,7 +207,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 7,
+			id: 'seguro-asistencia-en-viaje',
 			name: 'Seguro Asistencia en viaje',
 			description: 'Cubre las indemnizaciones y a efectuar las prestaciones contempladas en favor de las personas aseguradas, respecto de una o varias contingencias que puedan sufrir durante un viaje y que se describen en la póliza de seguro.',
 			cover: [],
@@ -218,7 +218,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 8,
+			id: 'rci',
 			name: 'RCI (Responsabilidad Civil Internacional)',
 			description: 'La cobertura cubre al asegurado por el daño que pueda experimentar su patrimonio a consecuencia de la reclamación que le efectúe un tercero, por la responsabilidad en que haya podido incurrir, tanto el propio asegurado como aquellas personas por las cuales él responda civilmente.',
 			cover: [],
@@ -229,7 +229,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 9,
+			id: 'seguro-incendio-hogar',
 			name: 'Seguro Incendio hogar',
 			description: 'Cobertura para tu hogar contra un daño generado por la acción directa de un incendio, sismo, o incluso el contenido, en caso de robo. Algunas asistencias de algunos pólizas son gasfitería, electricidad, cerrajería y cristalería. Hay que estar preparado ante condiciones inevitables como un terremoto y sobre todo en un país tan sísmico como CHILE, dado que nos encontramos dentro de los 6 países mas sísmicos del mundo.',
 			cover: [],
@@ -240,7 +240,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 10,
+			id: 'seguro-incendio',
 			name: 'Seguro incendio',
 			description: 'La presente cobertura, cubre, los daños materiales que sufran los objetos asegurados por la acción directa del incendio y los que sean una consecuencia inmediata del mismo, como los causados por el calor, el humo, el vapor o por los medios empleados para extinguirlo o contenerlo; y las demoliciones que sean necesarias u ordenadas por la autoridad competente.',
 			cover: [],
@@ -251,7 +251,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 11,
+			id: 'seguro-pyme',
 			name: 'Seguro PYME',
 			description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna',
 			cover: [],
@@ -262,7 +262,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 12,
+			id: 'seguro-todo-riesgo-de-construcción',
 			name: 'Seguro Todo Riesgo de Construcción',
 			description: 'Cubre al “Asegurado” descrito en las Condiciones Particulares, por los riesgos derivados de Trabajos de Construcción e Ingeniería Civil y por la Responsabilidad Civil, es decir, por la responsabilidad en que haya podido incurrir, tanto el propio asegurado como aquellas personas por las cuales él responda civilmente.',
 			cover: [],
@@ -273,7 +273,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 13,
+			id: 'seguro-todo-riesgo-montaje',
 			name: 'Seguro Todo Riesgo Montaje',
 			description: 'Cubre al asegurado, descrito en las Condiciones Particulares de la póliza, los riesgos derivados de Trabajos de Montaje, y la Responsabilidad Civil, si ambos riesgos han sido contratados conjuntamente, dentro de los límites, montos, condiciones y demás estipulaciones de estas condiciones Generales y en las condiciones particulares de la Póliza.',
 			cover: [],
@@ -284,7 +284,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 14,
+			id: 'seguro-equipo-contratista',
 			name: 'Seguro Equipo Contratista',
 			description: 'Cubre al asegurado descrito en las Condiciones Particulares de la póliza, los riesgos de daños propios y la responsabilidad civil, si ha sido contratada, dentro de los límites, montos, condiciones y demás estipulaciones indicadas en estas Condiciones Generales y en las Condiciones Particulares de la póliza.',
 			cover: [],
@@ -295,7 +295,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 15,
+			id: 'seguro-equipos-electrónicos',
 			name: 'Seguro Equipos Electrónicos',
 			description: 'Cubre al asegurado los riesgos de daños físicos, de todas las instalaciones y equipos electrónicos especificados en las Condiciones Particulares de la póliza, llamadas en adelante materia asegurada, una vez que su instalación y puesta en marcha hayan sido finalizadas satisfactoriamente.',
 			cover: [],
@@ -306,7 +306,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 16,
+			id: 'responsabilidad-civil',
 			name: 'Responsabilidad Civil',
 			description: 'La cobertura cubre al asegurado por el daño que pueda experimentar su patrimonio a consecuencia de la reclamación que le efectúe un tercero, por la responsabilidad en que haya podido incurrir, tanto el propio asegurado como aquellas personas por las cuales él responda civilmente.',
 			cover: [],
@@ -317,7 +317,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 17,
+			id: 'incendio-comunidad',
 			name: 'Incendio Comunidad',
 			description: 'La presente cobertura, cubre, los daños materiales que sufran los objetos asegurados por la acción directa del incendio y los que sean una consecuencia inmediata del mismo, como los causados por el calor, el humo, el vapor o por los medios empleados para extinguirlo o contenerlo; y las demoliciones que sean necesarias u ordenadas por la autoridad competente.',
 			cover: [],
@@ -328,7 +328,7 @@ export class ProductosService {
 			content: []
 		},
 		{
-			id: 18,
+			id: 'seguro-automotriz-flotas',
 			name: 'Seguro automotriz (flotas)',
 			description: 'Lo que se busca es garantizar la tranquilidad y funcionamiento de tu negocio, frente a algún problema. Protege tu inversión sobre daños, robos o accidentes, con un seguro automotriz y cuida tu patrimonio en tu empresa. Cubre daños propios como a terceros.',
 			cover: [],
@@ -354,7 +354,7 @@ export class ProductosService {
 	}
 	
 	
-	getProductById(id: number): Observable<Producto | undefined> {
+	getProductById(id: string): Observable<Producto | undefined> {
 		const producto = this.productos.find(producto => producto.id === id);
 		return of(producto);
 	}

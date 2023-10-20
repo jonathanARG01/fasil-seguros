@@ -37,11 +37,10 @@ export class ContenidoComponent {
 	
 		this.activatedRoute.params.subscribe(params => {
 	
-			const id = +params['id'];
+			const id = params['id'].toString();
 	  
 			this.productosServices.getProductById(id).subscribe((project: Producto | undefined) => {
 				
-				console.log('project desde content:', project);
 				this.product = project;
 
 		  	});
